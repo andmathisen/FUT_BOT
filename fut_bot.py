@@ -14,14 +14,16 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import StaleElementReferenceException
 from selenium.common.exceptions import ElementClickInterceptedException
 from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 def create_cookies():
-    driver = webdriver.Chrome(
-        executable_path="/Users/andreas/desktop/FUT_BOT/chromedriver")
+    driver = webdriver.Firefox(
+        executable_path="/Users/andreas/Desktop/FUT_BOT/geckodriver")
     driver.get("https://www.ea.com/nb-no/fifa/ultimate-team/web-app/")
     foo = input()
-    save_cookie(driver, 'cookies.pkl')
+    pickle.dump(driver.get_cookies(), open("cookies.pkl", "wb"))
 
 
 def save_cookie(driver, path):
@@ -40,19 +42,59 @@ def main():
 
     quick_sell_disabled = False
 
-    if len(sys.argv) == 3:
+    if len(sys.argv) == 5:
         mode = sys.argv[1]
         sbcType = sys.argv[2]
+        email = sys.argv[3]
+        passw = sys.argv[4]
 
     else:
         mode = sys.argv[1]
-
+        email = sys.argv[2]
+        passw = sys.argv[3]
+    """
     driver = webdriver.Chrome(
         executable_path="/Users/andreas/desktop/FUT_BOT/chromedriver")
 
+    driver.get("https://www.ea.com/nb-no/andfifa/ultimate-team/web-app/")
+    """
+
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service)
+
+    # driver = webdriver.Chrome(
+    #     executable_path="/Users/andreas/desktop/FUT_BOT/chromedriver")
     driver.get("https://www.ea.com/nb-no/fifa/ultimate-team/web-app/")
 
-    login = input()
+    load_cookie(driver, "cookies.pkl")
+
+    driver.get("https://www.ea.com/nb-no/fifa/ultimate-team/web-app/")
+
+    loginBtn = WebDriverWait(driver, 20).until(
+        EC.element_to_be_clickable((By.XPATH, '/html/body/main/div/div/div/button[1]')))
+
+    loginBtn.click()
+
+    email_input = WebDriverWait(driver, 20).until(
+        EC.element_to_be_clickable((By.XPATH, '//*[@id="email"]')))
+
+    email_input.click()
+    time.sleep(0.1)
+    email_input.send_keys(
+        email)
+
+    passw_input = WebDriverWait(driver, 20).until(
+        EC.element_to_be_clickable((By.XPATH, '//*[@id="password"]')))
+
+    passw_input.click()
+    time.sleep(0.1)
+    passw_input.send_keys(
+        passw)
+
+    loginBtn = WebDriverWait(driver, 20).until(
+        EC.element_to_be_clickable((By.XPATH, '//*[@id="logInBtn"]')))
+
+    loginBtn.click()
 
     tot_n_packs = 0
     tot_profit = 0
@@ -67,6 +109,7 @@ def main():
             players_sent_to_club = 0
             attempts = 0
             while attempts < 2:
+                print("trying")
                 try:
                     attempts = 0
                     while attempts < 2:
@@ -120,8 +163,8 @@ def main():
                             okBtn.click()
                             ulElem = WebDriverWait(driver, 20).until(
                                 EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[1]/section[1]/ul")))
-                            all_li_elements = ulElem.find_elements_by_tag_name(
-                                "li")
+                            all_li_elements = ulElem.find_elements(
+                                By.TAG_NAME, "li")
                             attempts = 0
                             break
                         except (ElementClickInterceptedException, StaleElementReferenceException):
@@ -136,13 +179,22 @@ def main():
             # time.sleep(0.3)
             pack_items = []
 
-            for li in all_li_elements:
-                class_name = li.get_attribute("class")
-                class_name = class_name.replace(" ", "")
-                if len(class_name) > 1:
-                    pack_items.append(li)
-                    tmp = li.text
-                    tmp = tmp.replace("\n", "")
+            attempts = 0
+
+            while attempts < 2:
+                try:
+                    for li in all_li_elements:
+                        class_name = li.get_attribute("class")
+                        class_name = class_name.replace(" ", "")
+                        if len(class_name) > 1:
+                            pack_items.append(li)
+                            tmp = li.text
+                            tmp = tmp.replace("\n", "")
+                    attempts = 0
+                    break
+                except (ElementClickInterceptedException, StaleElementReferenceException):
+                    pass
+                attempts = attempts + 1
 
             # SELL DUPLICATES
 
@@ -151,7 +203,7 @@ def main():
                 dup_ulElem = WebDriverWait(driver, 20).until(
                     EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[1]/section[2]/ul")))
 
-                dup_li_elements = dup_ulElem.find_elements_by_tag_name("li")
+                dup_li_elements = dup_ulElem.find_elements(By.TAG_NAME, "li")
 
                 # time.sleep(0.3)
                 dup_pack_items = []
@@ -172,11 +224,11 @@ def main():
                     attempts = 0
                     while attempts < 2:
                         try:
-                            item = driver.find_element_by_xpath(
-                                "/html/body/main/section/section/div[2]/div/div/section[1]/section[2]/ul/li")
+                            item = driver.find_element(By.XPATH,
+                                                       "/html/body/main/section/section/div[2]/div/div/section[1]/section[2]/ul/li")
                             time.sleep(0.5)
-                            itemtype = item.find_element_by_xpath(
-                                "/html/body/main/section/section/div[2]/div/div/section[1]/section[2]/ul/li/div/div[1]/div[1]").get_attribute("class")
+                            itemtype = item.find_element(By.XPATH,
+                                                         "/html/body/main/section/section/div[2]/div/div/section[1]/section[2]/ul/li/div/div[1]/div[1]").get_attribute("class")
                             item.click()
                             attempts = 0
                             break
@@ -187,9 +239,18 @@ def main():
 
                     if itemtype == "small player item rare ut-item-loaded" or itemtype == "small player item common ut-item-loaded" or itemtype == "small manager staff item common ut-item-loaded" or itemtype == "small manager staff item rare ut-item-loaded" or itemtype == "small player item specials ut-item-loaded":
                         # time.sleep(0.2)
-                        comparePrice = WebDriverWait(driver, 20).until(
-                            EC.element_to_be_clickable((By.CSS_SELECTOR, "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-container-view--content > div > div.DetailPanel > div.ut-button-group > button:nth-child(9)")))
-                        comparePrice.click()
+
+                        attempts = 0
+                        while attempts < 2:
+                            try:
+                                comparePrice = WebDriverWait(driver, 20).until(
+                                    EC.element_to_be_clickable((By.CSS_SELECTOR, "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-container-view--content > div > div.DetailPanel > div.ut-button-group > button:nth-child(9)")))
+                                comparePrice.click()
+                                attempts = 0
+                                break
+                            except (StaleElementReferenceException, NoSuchElementException):
+                                pass
+                            attempts = attempts + 1
 
                         time.sleep(0.2)
 
@@ -197,10 +258,10 @@ def main():
                         items = []
                         attempts = 0
                         while len(items) < 1 and attempts < 4:
-                            priceList = driver.find_element_by_xpath(
-                                "/html/body/main/section/section/div[2]/div/div/section[2]/div[2]/section/div[2]/ul")
+                            priceList = driver.find_element(By.XPATH,
+                                                            "/html/body/main/section/section/div[2]/div/div/section[2]/div[2]/section/div[2]/ul")
                             time.sleep(0.5)
-                            items = priceList.find_elements_by_tag_name("li")
+                            items = priceList.find_elements(By.TAG_NAME, "li")
                             attempts = attempts + 1
 
                         for i in items:
@@ -278,8 +339,8 @@ def main():
                                             quick_sell = WebDriverWait(driver, 20).until(
                                                 EC.element_to_be_clickable((By.CSS_SELECTOR, "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10)")))
 
-                                            quick_sell_price = quick_sell.find_element_by_css_selector(
-                                                "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10) > span.btn-subtext.currency-coins").text
+                                            quick_sell_price = quick_sell.find_element(By.CSS_SELECTOR,
+                                                                                       "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10) > span.btn-subtext.currency-coins").text
                                             quick_sell_price = int(
                                                 quick_sell_price)
                                             pack_quick_sell = pack_quick_sell + quick_sell_price
@@ -346,8 +407,8 @@ def main():
                             try:
                                 quick_sell = WebDriverWait(driver, 20).until(
                                     EC.element_to_be_clickable((By.CSS_SELECTOR, "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10)")))
-                                quick_sell_price = quick_sell.find_element_by_css_selector(
-                                    "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10) > span.btn-subtext.currency-coins").text
+                                quick_sell_price = quick_sell.find_element(By.CSS_SELECTOR,
+                                                                           "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10) > span.btn-subtext.currency-coins").text
                                 quick_sell_price = int(
                                     quick_sell_price)
                                 pack_quick_sell = pack_quick_sell + quick_sell_price
@@ -369,11 +430,11 @@ def main():
                 attempts = 0
                 while attempts < 2:
                     try:
-                        item = driver.find_element_by_xpath("/html/body/main/section/section/div[2]/div/div/section[1]/section/ul/li["+str(
+                        item = driver.find_element(By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[1]/section/ul/li["+str(
                             counter) + "]")
                         time.sleep(0.5)
-                        itemtype = driver.find_element_by_xpath(
-                            "/html/body/main/section/section/div[2]/div/div/section[1]/section/ul/li["+str(counter)+"]/div/div[1]/div[1]").get_attribute("class")
+                        itemtype = driver.find_element(By.XPATH,
+                                                       "/html/body/main/section/section/div[2]/div/div/section[1]/section/ul/li["+str(counter)+"]/div/div[1]/div[1]").get_attribute("class")
                         item.click()
                         attempts = 0
                         break
@@ -406,10 +467,10 @@ def main():
                     lowestPrice = 100000
                     attempts = 0
                     while len(items) < 1 and attempts < 4:
-                        priceList = driver.find_element_by_xpath(
-                            "/html/body/main/section/section/div[2]/div/div/section[2]/div[2]/section/div[2]/ul")
+                        priceList = driver.find_element(By.XPATH,
+                                                        "/html/body/main/section/section/div[2]/div/div/section[2]/div[2]/section/div[2]/ul")
                         time.sleep(0.3)
-                        items = priceList.find_elements_by_tag_name("li")
+                        items = priceList.find_elements(By.TAG_NAME, "li")
                         attempts = attempts + 1
 
                     for i in items:
@@ -491,8 +552,8 @@ def main():
                                     try:
                                         quick_sell = WebDriverWait(driver, 20).until(
                                             EC.element_to_be_clickable((By.CSS_SELECTOR, "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10)")))
-                                        quick_sell_price = quick_sell.find_element_by_css_selector(
-                                            "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10) > span.btn-subtext.currency-coins").text
+                                        quick_sell_price = quick_sell.find_element(By.CSS_SELECTOR,
+                                                                                   "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10) > span.btn-subtext.currency-coins").text
                                         quick_sell_price = int(
                                             quick_sell_price)
                                         pack_quick_sell = pack_quick_sell + quick_sell_price
@@ -588,8 +649,8 @@ def main():
                 try:
                     quick_sell_all = WebDriverWait(driver, 20).until(
                         EC.element_to_be_clickable((By.CSS_SELECTOR, "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-unassigned-view.ui-layout-left > section > div > button")))
-                    quick_sell_all_amount = quick_sell_all.find_element_by_css_selector(
-                        "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-unassigned-view.ui-layout-left > section:nth-child(1) > div > button > span.btn-subtext.currency-coins").text
+                    quick_sell_all_amount = quick_sell_all.find_element(By.CSS_SELECTOR,
+                                                                        "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-unassigned-view.ui-layout-left > section:nth-child(1) > div > button > span.btn-subtext.currency-coins").text
                     quick_sell_all_amount = int(quick_sell_all_amount)
                     pack_quick_sell = pack_quick_sell + quick_sell_all_amount
                     quick_sell_all.click()
@@ -664,8 +725,8 @@ def main():
 
                     time.sleep(0.2)
 
-                    commonBtn = driver.find_element_by_css_selector(
-                        "body > main > section > section > div.ut-navigation-container-view--content > div > div > section > div.ut-navigation-container-view--content > div > div.ut-item-search-view > div.inline-list-select.ut-search-filter-control.has-default.has-image.ui-flip-vertical.is-open > div > ul > li:nth-child(3)")
+                    commonBtn = driver.find_element(By.CSS_SELECTOR,
+                                                    "body > main > section > section > div.ut-navigation-container-view--content > div > div > section > div.ut-navigation-container-view--content > div > div.ut-item-search-view > div.inline-list-select.ut-search-filter-control.has-default.has-image.ui-flip-vertical.is-open > div > ul > li:nth-child(3)")
 
                     commonBtn.click()
 
@@ -732,7 +793,7 @@ def main():
             ulElem = WebDriverWait(driver, 20).until(
                 EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[1]/section/ul")))
 
-            li_elements = ulElem.find_elements_by_tag_name("li")
+            li_elements = ulElem.find_elements(By.TAG_NAME, "li")
 
             # time.sleep(0.3)
             pack_items = []
@@ -750,13 +811,13 @@ def main():
             if len(pack_items) != 2:
                 while attempts < 2:
                     try:
-                        quick_sell_dup = driver.find_element_by_xpath(
-                            "/html/body/main/section/section/div[2]/div/div/section[1]/section[2]/div/button")
+                        quick_sell_dup = driver.find_element(By.XPATH,
+                                                             "/html/body/main/section/section/div[2]/div/div/section[1]/section[2]/div/button")
                         time.sleep(0.1)
                         quick_sell_dup.click()
                         time.sleep(0.1)
-                        confirm_sell = driver.find_element_by_xpath(
-                            "/html/body/div[4]/section/div/div/button[1]/span[1]")
+                        confirm_sell = driver.find_element(By.XPATH,
+                                                           "/html/body/div[4]/section/div/div/button[1]/span[1]")
                         confirm_sell.click()
                         attempts = 0
                         break
@@ -824,3 +885,4 @@ def main():
 if __name__ == '__main__':
 
     main()
+    # create_cookies()
