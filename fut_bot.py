@@ -18,6 +18,20 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
 
+def attempt_click(xpath):
+    attempts = 0
+    while attempts < 5:
+        try:
+            btn = WebDriverWait(driver, 20).until(
+                EC.element_to_be_clickable((By.XPATH, xpath)))
+            btn.click()
+            attempts = 0
+            break
+        except (ElementClickInterceptedException, StaleElementReferenceException, NoSuchElementException):
+            pass
+        attempts = attempts + 1
+
+
 def create_cookies():
     driver = webdriver.Firefox(
         executable_path="/Users/andreas/Desktop/FUT_BOT/geckodriver")
@@ -39,8 +53,6 @@ def load_cookie(driver, path):
 
 
 def main():
-
-    quick_sell_disabled = False
 
     if len(sys.argv) == 5:
         mode = sys.argv[1]
@@ -113,7 +125,6 @@ def main():
             players_sent_to_club = 0
             attempts = 0
             while attempts < 2:
-                print("trying")
                 try:
                     attempts = 0
                     while attempts < 2:
@@ -236,13 +247,77 @@ def main():
                             item.click()
                             attempts = 0
                             break
-                        except StaleElementReferenceException:
+                        except (StaleElementReferenceException, ElementClickInterceptedException):
                             pass
 
                         attempts = attempts + 1
 
                     if itemtype == "small player item rare ut-item-loaded" or itemtype == "small player item common ut-item-loaded" or itemtype == "small manager staff item common ut-item-loaded" or itemtype == "small manager staff item rare ut-item-loaded" or itemtype == "small player item specials ut-item-loaded":
                         # time.sleep(0.2)
+                        try:
+                            check_list_btn = WebDriverWait(driver, 10).until(
+                                EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[2]/div/div/div[2]/div[2]/div[1]/button")))
+                        except TimeoutException:
+                            clearTransferAttempts = 0
+                            while clearTransferAttempts < 4:
+                                try:
+                                    transfers = WebDriverWait(driver, 20).until(
+                                        EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/nav/button[3]")))
+                                    transfers.click()
+                                    time.sleep(0.1)
+                                    transferlist = WebDriverWait(driver, 20).until(
+                                        EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/div[3]")))
+                                    transferlist.click()
+                                    clearTransferAttempts = 0
+                                    break
+                                except (ElementClickInterceptedException, StaleElementReferenceException):
+                                    pass
+                                clearTransferAttempts = clearTransferAttempts + 1
+
+                            while clearTransferAttempts < 4:
+                                try:
+                                    remove_sold_btn = WebDriverWait(driver, 100000).until(
+                                        EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/div/section[1]/header/button")))
+                                    remove_sold_btn.click()
+                                    time.sleep(0.2)
+                                    store_btn = WebDriverWait(driver, 20).until(
+                                        EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/nav/button[4]")))
+                                    store_btn.click()
+                                    clearTransferAttempts = 0
+                                    break
+                                except (ElementClickInterceptedException, StaleElementReferenceException):
+                                    pass
+                                clearTransferAttempts = clearTransferAttempts + 1
+
+                            while clearTransferAttempts < 4:
+                                try:
+                                    packs_btn = WebDriverWait(driver, 20).until(
+                                        EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/div[2]")))
+                                    packs_btn.click()
+
+                                    unassigned_btn = WebDriverWait(driver, 20).until(
+                                        EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div[2]/div[1]")))
+                                    unassigned_btn.click()
+                                    clearTransferAttempts = 0
+                                    break
+                                except (ElementClickInterceptedException, StaleElementReferenceException):
+                                    pass
+                                clearTransferAttempts = clearTransferAttempts + 1
+                            time.sleep(0.2)
+                            while clearTransferAttempts < 4:
+                                try:
+                                    time.sleep(0.2)
+                                    item = driver.find_element(By.XPATH,
+                                                               "/html/body/main/section/section/div[2]/div/div/section[1]/section[2]/ul/li")
+                                    time.sleep(0.5)
+                                    itemtype = item.find_element(By.XPATH,
+                                                                 "/html/body/main/section/section/div[2]/div/div/section[1]/section[2]/ul/li/div/div[1]/div[1]").get_attribute("class")
+                                    item.click()
+                                    clearTransferAttempts = 0
+                                    break
+                                except (ElementClickInterceptedException, StaleElementReferenceException, NoSuchElementException):
+                                    pass
+                                clearTransferAttempts = clearTransferAttempts + 1
 
                         attempts = 0
                         while attempts < 2:
@@ -285,7 +360,11 @@ def main():
 
                                 price = str(price)
                                 price = price.replace(" ", "")
-                                price = int(price)
+
+                                try:
+                                    price = int(price)
+                                except ValueError:
+                                    price = 1000
                                 # print("pris:", price)
                                 if price == 200:
                                     lowestPrice = price
@@ -305,58 +384,38 @@ def main():
                             attempts = 0
                             while attempts < 2:
                                 try:
-                                    send_to_club = WebDriverWait(driver, 20).until(
+                                    send_to_club = WebDriverWait(driver, 10).until(
                                         EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[2]/div[2]/div/div[2]/div[3]/button[6]")))
                                     attempts = 0
                                     send_to_club_tag = send_to_club.text
                                     break
+
                                 except StaleElementReferenceException:
                                     pass
                                 attempts = attempts + 1
 
                             if send_to_club_tag == "Bytt dublett fra klubb":
-                                if quick_sell_disabled:
-                                    list_on_market = WebDriverWait(driver, 20).until(
-                                        EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[2]/div[2]/div/div[2]/div[2]/div[1]/button")))
-                                    list_on_market.click()
-                                    sell_price_input = WebDriverWait(driver, 20).until(
-                                        EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[2]/div[2]/div/div[2]/div[2]/div[2]/div[3]/div[2]/input")))
 
-                                    sell_price_input.click()
-                                    for i in range(6):
-                                        time.sleep(0.1)
-                                        sell_price_input.send_keys(
-                                            Keys.BACK_SPACE)
+                                attempts = 0
+                                while attempts < 2:
+                                    try:
+                                        quick_sell = WebDriverWait(driver, 20).until(
+                                            EC.element_to_be_clickable((By.CSS_SELECTOR, "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10)")))
 
-                                    # print(lowestPrice)
-                                    sell_price_input.send_keys(str(200))
-                                    confirm_sell = WebDriverWait(driver, 20).until(
-                                        EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[2]/div/div/div[2]/div[2]/div[2]/button")))
-
-                                    confirm_sell.click()
-                                    # time.sleep(0.2)
-
-                                else:
-                                    attempts = 0
-                                    while attempts < 2:
-                                        try:
-                                            quick_sell = WebDriverWait(driver, 20).until(
-                                                EC.element_to_be_clickable((By.CSS_SELECTOR, "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10)")))
-
-                                            quick_sell_price = quick_sell.find_element(By.CSS_SELECTOR,
-                                                                                       "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10) > span.btn-subtext.currency-coins").text
-                                            quick_sell_price = int(
-                                                quick_sell_price)
-                                            pack_quick_sell = pack_quick_sell + quick_sell_price
-                                            quick_sell.click()
-                                            quick_sell_confirm = WebDriverWait(driver, 20).until(
-                                                EC.element_to_be_clickable((By.CSS_SELECTOR, "body > div.view-modal-container.form-modal > section > div > div > button:nth-child(1)")))
-                                            quick_sell_confirm.click()
-                                            attempts = 0
-                                            break
-                                        except (ElementClickInterceptedException, StaleElementReferenceException):
-                                            pass
-                                        attempts = attempts + 1
+                                        quick_sell_price = quick_sell.find_element(By.CSS_SELECTOR,
+                                                                                   "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10) > span.btn-subtext.currency-coins").text
+                                        quick_sell_price = int(
+                                            quick_sell_price)
+                                        pack_quick_sell = pack_quick_sell + quick_sell_price
+                                        quick_sell.click()
+                                        quick_sell_confirm = WebDriverWait(driver, 20).until(
+                                            EC.element_to_be_clickable((By.CSS_SELECTOR, "body > div.view-modal-container.form-modal > section > div > div > button:nth-child(1)")))
+                                        quick_sell_confirm.click()
+                                        attempts = 0
+                                        break
+                                    except (ElementClickInterceptedException, StaleElementReferenceException):
+                                        pass
+                                    attempts = attempts + 1
 
                                     # time.sleep(0.2)
 
@@ -373,9 +432,9 @@ def main():
 
                         else:
                             attempts = 0
-                            while attempts < 2:
+                            while attempts < 4:
                                 try:
-                                    list_on_market = WebDriverWait(driver, 20).until(
+                                    list_on_market = WebDriverWait(driver, 10).until(
                                         EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[2]/div[2]/div/div[2]/div[2]/div[1]/button")))
                                     list_on_market.click()
                                     sell_price_input = WebDriverWait(driver, 20).until(
@@ -383,6 +442,7 @@ def main():
                                     sell_price_input.click()
                                     attempts = 0
                                     break
+
                                 except (ElementClickInterceptedException, StaleElementReferenceException):
                                     pass
                                 attempts = attempts + 1
@@ -393,6 +453,25 @@ def main():
 
                             # print(lowestPrice)
                             sell_price_input.send_keys(str(lowestPrice-100))
+
+                            attempts = 0
+                            while attempts < 2:
+                                try:
+                                    min_price_input = WebDriverWait(driver, 20).until(
+                                        EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[2]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div[2]/input")))
+                                    min_price_input.click()
+                                    attempts = 0
+                                    break
+                                except (ElementClickInterceptedException, StaleElementReferenceException):
+                                    pass
+                                attempts = attempts + 1
+
+                            for i in range(6):
+                                time.sleep(0.1)
+                                min_price_input.send_keys(Keys.BACK_SPACE)
+
+                            # print(lowestPrice)
+                            min_price_input.send_keys(str(lowestPrice-200))
 
                             confirm_sell = WebDriverWait(driver, 20).until(
                                 EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[2]/div/div/div[2]/div[2]/div[2]/button")))
@@ -460,6 +539,71 @@ def main():
 
                 elif itemtype == "small player item rare ut-item-loaded" or itemtype == "small player item common ut-item-loaded" or itemtype == "small manager staff item common ut-item-loaded" or itemtype == "small manager staff item rare ut-item-loaded" or itemtype == "small player item specials ut-item-loaded":
 
+                    try:
+                        check_list_btn = WebDriverWait(driver, 10).until(
+                            EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[2]/div/div/div[2]/div[2]/div[1]/button")))
+                    except TimeoutException:
+                        clearTransferAttempts = 0
+                        while clearTransferAttempts < 4:
+                            try:
+                                transfers = WebDriverWait(driver, 20).until(
+                                    EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/nav/button[3]")))
+                                transfers.click()
+                                time.sleep(0.1)
+                                transferlist = WebDriverWait(driver, 20).until(
+                                    EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/div[3]")))
+                                transferlist.click()
+                                clearTransferAttempts = 0
+                                break
+                            except (ElementClickInterceptedException, StaleElementReferenceException):
+                                pass
+                            clearTransferAttempts = clearTransferAttempts + 1
+
+                        while clearTransferAttempts < 4:
+                            try:
+                                remove_sold_btn = WebDriverWait(driver, 100000).until(
+                                    EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/div/section[1]/header/button")))
+                                remove_sold_btn.click()
+                                time.sleep(0.2)
+                                store_btn = WebDriverWait(driver, 20).until(
+                                    EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/nav/button[4]")))
+                                store_btn.click()
+                                clearTransferAttempts = 0
+                                break
+                            except (ElementClickInterceptedException, StaleElementReferenceException):
+                                pass
+                            clearTransferAttempts = clearTransferAttempts + 1
+
+                        while clearTransferAttempts < 4:
+                            try:
+                                packs_btn = WebDriverWait(driver, 20).until(
+                                    EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/div[2]")))
+                                packs_btn.click()
+
+                                unassigned_btn = WebDriverWait(driver, 20).until(
+                                    EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div[2]/div[1]")))
+                                unassigned_btn.click()
+                                clearTransferAttempts = 0
+                                break
+                            except (ElementClickInterceptedException, StaleElementReferenceException):
+                                pass
+                            clearTransferAttempts = clearTransferAttempts + 1
+                        time.sleep(0.2)
+                        while clearTransferAttempts < 4:
+                            try:
+                                time.sleep(0.2)
+                                item = driver.find_element(By.XPATH,
+                                                           "/html/body/main/section/section/div[2]/div/div/section[1]/section[2]/ul/li")
+                                time.sleep(0.5)
+                                itemtype = item.find_element(By.XPATH,
+                                                             "/html/body/main/section/section/div[2]/div/div/section[1]/section[2]/ul/li/div/div[1]/div[1]").get_attribute("class")
+                                item.click()
+                                clearTransferAttempts = 0
+                                break
+                            except (ElementClickInterceptedException, StaleElementReferenceException, NoSuchElementException):
+                                pass
+                            clearTransferAttempts = clearTransferAttempts + 1
+
                     attempts = 0
                     while attempts < 2:
                         try:
@@ -499,9 +643,13 @@ def main():
                                     price = tmp[8]
                                 elif len(tmp) == 9:
                                     price = tmp[6]
-                            if isinstance(price, str):
-                                price = price.replace(" ", "")
-                            price = int(price)
+
+                            price = str(price)
+                            price = price.replace(" ", "")
+                            try:
+                                price = int(price)
+                            except ValueError:
+                                price = 1000
                             # print("pris:", price)
                             if price == 200:
                                 lowestPrice = price
@@ -528,59 +676,39 @@ def main():
                         attempts = 0
                         while attempts < 2:
                             try:
-                                send_to_club = WebDriverWait(driver, 20).until(
+                                send_to_club = WebDriverWait(driver, 10).until(
                                     EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[2]/div[2]/div/div[2]/div[3]/button[6]")))
                                 send_to_club_tag = send_to_club.text
                                 attempts = 0
                                 break
+
                             except StaleElementReferenceException:
                                 pass
                             attempts = attempts + 1
 
                         if send_to_club_tag == "Bytt dublett fra klubb":
-                            if quick_sell_disabled:
-                                list_on_market = WebDriverWait(driver, 20).until(
-                                    EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[2]/div[2]/div/div[2]/div[2]/div[1]/button")))
-                                list_on_market.click()
-                                sell_price_input = WebDriverWait(driver, 20).until(
-                                    EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[2]/div[2]/div/div[2]/div[2]/div[2]/div[3]/div[2]/input")))
 
-                                sell_price_input.click()
-                                for i in range(6):
-                                    time.sleep(0.1)
-                                    sell_price_input.send_keys(Keys.BACK_SPACE)
-
-                                # print(lowestPrice)
-                                sell_price_input.send_keys(str(200))
-                                confirm_sell = WebDriverWait(driver, 20).until(
-                                    EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[2]/div/div/div[2]/div[2]/div[2]/button")))
-
-                                confirm_sell.click()
-                                # time.sleep(0.3)
-                                counter = counter - 1
-
-                            else:
-                                attempts = 0
-                                while attempts < 2:
-                                    try:
-                                        quick_sell = WebDriverWait(driver, 20).until(
-                                            EC.element_to_be_clickable((By.CSS_SELECTOR, "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10)")))
-                                        quick_sell_price = quick_sell.find_element(By.CSS_SELECTOR,
-                                                                                   "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10) > span.btn-subtext.currency-coins").text
-                                        quick_sell_price = int(
-                                            quick_sell_price)
-                                        pack_quick_sell = pack_quick_sell + quick_sell_price
-                                        quick_sell.click()
-                                        quick_sell_confirm = WebDriverWait(driver, 20).until(
-                                            EC.element_to_be_clickable((By.CSS_SELECTOR, "body > div.view-modal-container.form-modal > section > div > div > button:nth-child(1)")))
-                                        quick_sell_confirm.click()
-                                        attempts = 0
-                                        break
-                                    except (ElementClickInterceptedException, StaleElementReferenceException):
-                                        pass
-                                    attempts = attempts + 1
-                                counter = counter - 1
-                                # time.sleep(0.3)
+                            attempts = 0
+                            while attempts < 2:
+                                try:
+                                    quick_sell = WebDriverWait(driver, 20).until(
+                                        EC.element_to_be_clickable((By.CSS_SELECTOR, "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10)")))
+                                    quick_sell_price = quick_sell.find_element(By.CSS_SELECTOR,
+                                                                               "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10) > span.btn-subtext.currency-coins").text
+                                    quick_sell_price = int(
+                                        quick_sell_price)
+                                    pack_quick_sell = pack_quick_sell + quick_sell_price
+                                    quick_sell.click()
+                                    quick_sell_confirm = WebDriverWait(driver, 20).until(
+                                        EC.element_to_be_clickable((By.CSS_SELECTOR, "body > div.view-modal-container.form-modal > section > div > div > button:nth-child(1)")))
+                                    quick_sell_confirm.click()
+                                    attempts = 0
+                                    break
+                                except (ElementClickInterceptedException, StaleElementReferenceException):
+                                    pass
+                                attempts = attempts + 1
+                            counter = counter - 1
+                            # time.sleep(0.3)
                         else:
 
                             while attempts < 2:
@@ -598,9 +726,9 @@ def main():
 
                     else:
                         attempts = 0
-                        while attempts < 2:
+                        while attempts < 4:
                             try:
-                                list_on_market = WebDriverWait(driver, 20).until(
+                                list_on_market = WebDriverWait(driver, 10).until(
                                     EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[2]/div[2]/div/div[2]/div[2]/div[1]/button")))
                                 list_on_market.click()
                                 sell_price_input = WebDriverWait(driver, 20).until(
@@ -608,6 +736,7 @@ def main():
                                 sell_price_input.click()
                                 attempts = 0
                                 break
+
                             except (ElementClickInterceptedException, StaleElementReferenceException):
                                 pass
                             attempts = attempts + 1
