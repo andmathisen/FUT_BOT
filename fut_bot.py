@@ -59,8 +59,12 @@ def main():
     driver.get("https://www.ea.com/nb-no/andfifa/ultimate-team/web-app/")
     """
 
+    options = webdriver.ChromeOptions()
+
+    options.add_argument('--headless')
+
     service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service)
+    driver = webdriver.Chrome(service=service, options=options)
 
     # driver = webdriver.Chrome(
     #     executable_path="/Users/andreas/desktop/FUT_BOT/chromedriver")
@@ -456,10 +460,18 @@ def main():
 
                 elif itemtype == "small player item rare ut-item-loaded" or itemtype == "small player item common ut-item-loaded" or itemtype == "small manager staff item common ut-item-loaded" or itemtype == "small manager staff item rare ut-item-loaded" or itemtype == "small player item specials ut-item-loaded":
 
+                    attempts = 0
+                    while attempts < 2:
+                        try:
+                            comparePrice = WebDriverWait(driver, 20).until(
+                                EC.element_to_be_clickable((By.CSS_SELECTOR, "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-container-view--content > div > div.DetailPanel > div.ut-button-group > button:nth-child(9)")))
+                            comparePrice.click()
+                            attempts = 0
+                            break
+                        except (StaleElementReferenceException, NoSuchElementException):
+                            pass
+                        attempts = attempts + 1
                     # time.sleep(0.2)
-                    comparePrice = WebDriverWait(driver, 20).until(
-                        EC.element_to_be_clickable((By.CSS_SELECTOR, "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-container-view--content > div > div.DetailPanel > div.ut-button-group > button:nth-child(9)")))
-                    comparePrice.click()
 
                     time.sleep(0.2)
 
@@ -487,7 +499,8 @@ def main():
                                     price = tmp[8]
                                 elif len(tmp) == 9:
                                     price = tmp[6]
-                            price = price.replace(" ", "")
+                            if isinstance(price, str):
+                                price = price.replace(" ", "")
                             price = int(price)
                             # print("pris:", price)
                             if price == 200:
