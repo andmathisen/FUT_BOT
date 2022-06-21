@@ -375,7 +375,14 @@ def main():
                                     priceList = WebDriverWait(driver, 20).until(
                                         EC.visibility_of_element_located((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[2]/div[2]/section/div[2]/ul")))
                                 except TimeoutException:
-                                    comparePrice.click()
+                                    att = 0
+                                    while att < 3:
+                                        try:
+                                            comparePrice.click()
+                                            break
+                                        except (StaleElementReferenceException, NoSuchElementException, ElementClickInterceptedException):
+                                            pass
+                                        att = att + 1
                                 # priceList = driver.find_element(By.XPATH,
                                 #                                 "/html/body/main/section/section/div[2]/div/div/section[2]/div[2]/section/div[2]/ul")
                                 time.sleep(0.5)
@@ -688,11 +695,15 @@ def main():
                         except TimeoutException:
                             try:
                                 comparePrice.click()
-                            except StaleElementReferenceException:
+                            except (StaleElementReferenceException, NoSuchElementException, ElementClickInterceptedException):
                                 pass
 
                         time.sleep(0.3)
-                        items = priceList.find_elements(By.TAG_NAME, "li")
+                        try:
+                            items = priceList.find_elements(By.TAG_NAME, "li")
+                        except (StaleElementReferenceException, NoSuchElementException, ElementClickInterceptedException):
+                            attempts = attempts - 1
+
                         attempts = attempts + 1
 
                     for i in items:
@@ -882,7 +893,8 @@ def main():
             results.write(text)
 
             print(text)
-
+            if(tot_profit < -10000):
+                break
             # time.sleep(0.4)
 
     elif mode == "sbc":
@@ -922,7 +934,7 @@ def main():
                     sortByBtn.click()
 
                     mostRecentBtn = WebDriverWait(driver, 20).until(
-                        EC.element_to_be_clickable((By.CSS_SELECTOR, "body > main > section > section > div.ut-navigation-container-view--content > div > div > section > div.ut-navigation-container-view--content > div > div.ut-squad-builder-view--filters > div > div.inline-list-select.ut-drop-down-control.is-open > div > ul > li:nth-child(5)")))
+                        EC.element_to_be_clickable((By.CSS_SELECTOR, "body > main > section > section > div.ut-navigation-container-view--content > div > div > section > div.ut-navigation-container-view--content > div > div.ut-squad-builder-view--filters > div > div.inline-list-select.ut-drop-down-control.is-open > div > ul > li:nth-child(4)")))
 
                     mostRecentBtn.click()
 
@@ -968,7 +980,7 @@ def main():
                 attempts = attempts + 1
 
     elif mode == "open_rewards":
-
+        nr_packs = 0
         while True:
             attempts = 0
             while attempts < 2:
@@ -998,45 +1010,42 @@ def main():
                     pass
                 attempts = attempts + 1
 
-            ulElem = WebDriverWait(driver, 20).until(
-                EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[1]/section/ul")))
+            attempts = 0
+            while attempts < 3:
+                try:
+                    save_all = WebDriverWait(driver, 5).until(
+                        EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[1]/section/header/button")))
+                    save_all.click()
+                    attempts = 0
+                    break
+                except (NoSuchElementException, TimeoutException):
+                    break
+                except (StaleElementReferenceException, ElementClickInterceptedException):
+                    pass
+                attempts = attempts + 1
 
-            li_elements = ulElem.find_elements(By.TAG_NAME, "li")
-
-            # time.sleep(0.3)
-            pack_items = []
-
-            for li in li_elements:
-
-                class_name = li.get_attribute("class")
-
-                class_name = class_name.replace(" ", "")
-                if len(class_name) > 1:
-                    pack_items.append(li)
-                    tmp = li.text
-                    tmp = tmp.replace("\n", "")
-
-            if len(pack_items) != 2:
-                while attempts < 2:
+            try:
+                item = WebDriverWait(driver, 5).until(
+                    EC.visibility_of_element_located((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section/div/div/h2")))
+            except (TimeoutException, NoSuchElementException):
+                attempts = 0
+                while attempts < 3:
                     try:
-                        quick_sell_dup = driver.find_element(By.XPATH,
-                                                             "/html/body/main/section/section/div[2]/div/div/section[1]/section[2]/div/button")
-                        time.sleep(0.1)
+                        quick_sell_dup = WebDriverWait(driver, 15).until(
+                            EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[1]/section/div/button")))
                         quick_sell_dup.click()
-                        time.sleep(0.1)
-                        confirm_sell = driver.find_element(By.XPATH,
-                                                           "/html/body/div[4]/section/div/div/button[1]/span[1]")
-                        confirm_sell.click()
+
+                        confirm = WebDriverWait(driver, 15).until(
+                            EC.element_to_be_clickable((By.XPATH, "/html/body/div[4]/section/div/div/button[1]")))
+
+                        confirm.click()
                         attempts = 0
                         break
-                    except (ElementClickInterceptedException, StaleElementReferenceException):
+                    except (StaleElementReferenceException, NoSuchElementException):
                         pass
                     attempts = attempts + 1
-            time.sleep(0.1)
-            saveAllBtn = WebDriverWait(driver, 20).until(
-                EC.element_to_be_clickable((By.CSS_SELECTOR, "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-unassigned-view.ui-layout-left > section > header > button")))
-            saveAllBtn.click()
-
+            nr_packs = nr_packs + 1
+            print("Packs opened: "+str(nr_packs))
     # Not finished
     elif mode == "clean_club":
 
