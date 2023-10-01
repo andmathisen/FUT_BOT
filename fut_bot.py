@@ -71,7 +71,7 @@ def unassigned_items(css, driver):
 
 def create_cookies():
     driver = webdriver.Firefox(
-        executable_path="/Users/andreas/Desktop/FUT_BOT/geckodriver")
+        executable_path="~/FUT_BOT/geckodriver")
     driver.get("https://www.ea.com/nb-no/fifa/ultimate-team/web-app/")
     foo = input()
     pickle.dump(driver.get_cookies(), open("cookies.pkl", "wb"))
@@ -88,6 +88,12 @@ def load_cookie(driver, path):
         for cookie in cookies:
             driver.add_cookie(cookie)
 
+def check_exists_by_xpath(xpath):
+    try:
+        webdriver.find_element_by_xpath(xpath)
+    except NoSuchElementException:
+        return False
+    return True
 
 def main():
 
@@ -824,7 +830,6 @@ def main():
 
                         # print(lowestPrice)
                         sell_price_input.send_keys(str(lowestPrice-100))
-
                         attempts = 0
                         while attempts < 2:
                             try:

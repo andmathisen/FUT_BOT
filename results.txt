@@ -1,0 +1,6 @@
+Pack number: 1
+	 - Pack profit: -654
+	 - Players sent to club: 1
+	 - Total profit: -654
+	 - Total players sent to club: 1
+-----------------------------

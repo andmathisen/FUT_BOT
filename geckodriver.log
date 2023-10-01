@@ -1,0 +1,821 @@
+1695760206212	geckodriver	INFO	Listening on 127.0.0.1:51830
+1695760206579	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofileeb7sVy"
+1695760212363	Marionette	INFO	Marionette enabled
+1695760212430	Marionette	INFO	Listening on port 51841
+Read port: 51841
+WebDriver BiDi listening on ws://127.0.0.1:51831
+1695760213033	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofileeb7sVy/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51831/devtools/browser/6e41a055-d681-4471-86c9-89cd39d440bf
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+1695760257875	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+[GFX1-]: Unrecognized feature ACCELERATED_CANVAS2D
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript warning: resource://devtools/server/actors/utils/event-loop.js, line 83: debuggee 'https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_4.js?_=5227:1' would run
+console.error: (new TypeError("topBrowsingContext is null", "resource://devtools/server/actors/watcher/browsing-context-helpers.jsm", 391))
+1695856680094	Marionette	INFO	Stopped listening on port 51841
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1696109466922	geckodriver	INFO	Listening on 127.0.0.1:56410
+1696109467279	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofileRjQnI4"
+*** You are running in headless mode.
+1696109472108	Marionette	INFO	Marionette enabled
+1696109472144	Marionette	INFO	Listening on port 56418
+Read port: 56418
+WebDriver BiDi listening on ws://127.0.0.1:56411
+1696109472743	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofileRjQnI4/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56411/devtools/browser/3a5374dc-5571-479c-a534-b34fa2b0266f
+1696109481726	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:236:24
+TimedPromise@chrome://remote/content/marionette/sync.js:221:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+1696109483991	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+[GFX1-]: Unrecognized feature ACCELERATED_CANVAS2D
+1696109903173	geckodriver	INFO	Listening on 127.0.0.1:56546
+1696109903254	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofilesByAa6"
+1696109903792	Marionette	INFO	Marionette enabled
+1696109903859	Marionette	INFO	Listening on port 56554
+Read port: 56554
+WebDriver BiDi listening on ws://127.0.0.1:56547
+1696109904770	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofilesByAa6/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56547/devtools/browser/eb4b5ee1-c856-4a40-bcac-99de52fef1c0
+1696109914157	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:236:24
+TimedPromise@chrome://remote/content/marionette/sync.js:221:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+1696109916521	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_1.js?_=5227, line 1: TypeError: t is null
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_3.js?_=5227, line 1: WebGL context was lost.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_3.js?_=5227, line 1: WebGL context was lost.
+1696109979041	Marionette	INFO	Stopped listening on port 56554
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+!!! error running onStopped callback: TypeError: callback is not a function
+1696109986147	geckodriver	INFO	Listening on 127.0.0.1:56630
+1696109986563	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofile9eqCcF"
+1696109987065	Marionette	INFO	Marionette enabled
+1696109987123	Marionette	INFO	Listening on port 56638
+Read port: 56638
+WebDriver BiDi listening on ws://127.0.0.1:56631
+1696109987888	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofile9eqCcF/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56631/devtools/browser/dc6b7dc0-51e4-40d5-8d2c-2f5ffaa8f857
+1696109996377	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:236:24
+TimedPromise@chrome://remote/content/marionette/sync.js:221:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+1696109998697	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1   HIToolbox                           0x00007ff82062b726 _ZN15MenuBarInstance22EnsureAutoShowObserverEv + 102
+2   HIToolbox                           0x00007ff82062b2b8 _ZN15MenuBarInstance14EnableAutoShowEv + 52
+3   HIToolbox                           0x00007ff82059acd7 _ZN15MenuBarInstance21UpdateAggregateUIModeE21MenuBarAnimationStylehhh + 1113
+4   HIToolbox                           0x00007ff82062b173 _ZN15MenuBarInstance19SetFullScreenUIModeEjj + 175
+5   AppKit                              0x00007ff81a0fc4b7 -[NSApplication _setPresentationOptions:instance:flags:] + 1145
+6   AppKit                              0x00007ff819f51165 -[NSApplication _updateFullScreenPresentationOptionsForInstance:] + 582
+7   CoreFoundation                      0x00007ff816c6b3f4 __CFNOTIFICATIONCENTER_IS_CALLING_OUT_TO_AN_OBSERVER__ + 137
+8   CoreFoundation                      0x00007ff816d0543a ___CFXRegistrationPost_block_invoke + 88
+9   CoreFoundation                      0x00007ff816d05389 _CFXRegistrationPost + 536
+10  CoreFoundation                      0x00007ff816c3e919 _CFXNotificationPost + 735
+11  Foundation                          0x00007ff817a78f2c -[NSNotificationCenter postNotificationName:object:userInfo:] + 82
+12  AppKit                              0x00007ff81a0fcb28 spacesNotificationHandler + 119
+13  SkyLight                            0x00007ff81b89a74d _ZN12_GLOBAL__N_123notify_datagram_handlerEj15CGSDatagramTypePvmS1_ + 1030
+14  SkyLight                            0x00007ff81bbad04a _ZN21CGSDatagramReadStream26dispatchMainQueueDatagramsEv + 202
+15  SkyLight                            0x00007ff81bbacf71 ___ZN21CGSDatagramReadStream15mainQueueWakeupEv_block_invoke + 18
+16  libdispatch.dylib                   0x00007ff816a197fb _dispatch_call_block_and_release + 12
+17  libdispatch.dylib                   0x00007ff816a1aa44 _dispatch_client_callout + 8
+18  libdispatch.dylib                   0x00007ff816a277b9 _dispatch_main_queue_drain + 952
+19  libdispatch.dylib                   0x00007ff816a273f3 _dispatch_main_queue_callback_4CF + 31
+20  CoreFoundation                      0x00007ff816cb4610 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 9
+21  CoreFoundation                      0x00007ff816c74b90 __CFRunLoopRun + 2454
+22  CoreFoundation                      0x00007ff816c73b80 CFRunLoopRunSpecific + 560
+23  HIToolbox                           0x00007ff8205b8766 RunCurrentEventLoopInMode + 292
+24  HIToolbox                           0x00007ff8205b8576 ReceiveNextEventCommon + 679
+25  HIToolbox                           0x00007ff8205b82b3 _BlockUntilNextEventMatchingListInModeWithFilter + 70
+26  AppKit                              0x00007ff819dbff33 _DPSNextEvent + 909
+27  AppKit                              0x00007ff819dbedb4 -[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 1219
+28  XUL                                 0x0000000120c77597 _ZN14nsXPTCStubBase7Stub249Ev + 12245431
+29  AppKit                              0x00007ff819db13f7 -[NSApplication run] + 586
+30  XUL                                 0x0000000120c78841 _ZN14nsXPTCStubBase7Stub249Ev + 12250209
+31  XUL                                 0x00000001248e2a0c workerlz4_decompress + 395388
+32  XUL                                 0x000000012111b175 workerlz4_maxCompressedSize + 470741
+33  XUL                                 0x0000000124951eec workerlz4_decompress + 851292
+34  XUL                                 0x0000000124952325 workerlz4_decompress + 852373
+35  firefox-bin                         0x000000010f86d005 firefox-bin + 8197
+36  dyld                                0x00007ff816867310 start + 2432
+JavaScript warning: resource://devtools/server/actors/utils/event-loop.js, line 83: debuggee 'https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_4.js?_=5227:1' would run
+1   HIToolbox                           0x00007ff8205b80c2 _ZN15MenuBarInstance22RemoveAutoShowObserverEv + 30
+2   HIToolbox                           0x00007ff8205f4638 _ZL17BroadcastInternaljPvh + 167
+3   SkyLight                            0x00007ff81b89a74d _ZN12_GLOBAL__N_123notify_datagram_handlerEj15CGSDatagramTypePvmS1_ + 1030
+4   SkyLight                            0x00007ff81bbad04a _ZN21CGSDatagramReadStream26dispatchMainQueueDatagramsEv + 202
+5   SkyLight                            0x00007ff81bbacf71 ___ZN21CGSDatagramReadStream15mainQueueWakeupEv_block_invoke + 18
+6   libdispatch.dylib                   0x00007ff816a197fb _dispatch_call_block_and_release + 12
+7   libdispatch.dylib                   0x00007ff816a1aa44 _dispatch_client_callout + 8
+8   libdispatch.dylib                   0x00007ff816a277b9 _dispatch_main_queue_drain + 952
+9   libdispatch.dylib                   0x00007ff816a273f3 _dispatch_main_queue_callback_4CF + 31
+10  CoreFoundation                      0x00007ff816cb4610 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 9
+11  CoreFoundation                      0x00007ff816c74b90 __CFRunLoopRun + 2454
+12  CoreFoundation                      0x00007ff816c73b80 CFRunLoopRunSpecific + 560
+13  HIToolbox                           0x00007ff8205b8766 RunCurrentEventLoopInMode + 292
+14  HIToolbox                           0x00007ff8205b8576 ReceiveNextEventCommon + 679
+15  HIToolbox                           0x00007ff8205b82b3 _BlockUntilNextEventMatchingListInModeWithFilter + 70
+16  AppKit                              0x00007ff819dbff33 _DPSNextEvent + 909
+17  AppKit                              0x00007ff819dbedb4 -[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 1219
+18  XUL                                 0x0000000120c77597 _ZN14nsXPTCStubBase7Stub249Ev + 12245431
+19  AppKit                              0x00007ff819db13f7 -[NSApplication run] + 586
+20  XUL                                 0x0000000120c78841 _ZN14nsXPTCStubBase7Stub249Ev + 12250209
+21  XUL                                 0x00000001248e2a0c workerlz4_decompress + 395388
+22  XUL                                 0x000000012111b175 workerlz4_maxCompressedSize + 470741
+23  XUL                                 0x0000000124951eec workerlz4_decompress + 851292
+24  XUL                                 0x0000000124952325 workerlz4_decompress + 852373
+25  firefox-bin                         0x000000010f86d005 firefox-bin + 8197
+26  dyld                                0x00007ff816867310 start + 2432
+1   HIToolbox                           0x00007ff82062b726 _ZN15MenuBarInstance22EnsureAutoShowObserverEv + 102
+2   HIToolbox                           0x00007ff8205f4638 _ZL17BroadcastInternaljPvh + 167
+3   SkyLight                            0x00007ff81b89a74d _ZN12_GLOBAL__N_123notify_datagram_handlerEj15CGSDatagramTypePvmS1_ + 1030
+4   SkyLight                            0x00007ff81bbad04a _ZN21CGSDatagramReadStream26dispatchMainQueueDatagramsEv + 202
+5   SkyLight                            0x00007ff81bbacf71 ___ZN21CGSDatagramReadStream15mainQueueWakeupEv_block_invoke + 18
+6   libdispatch.dylib                   0x00007ff816a197fb _dispatch_call_block_and_release + 12
+7   libdispatch.dylib                   0x00007ff816a1aa44 _dispatch_client_callout + 8
+8   libdispatch.dylib                   0x00007ff816a277b9 _dispatch_main_queue_drain + 952
+9   libdispatch.dylib                   0x00007ff816a273f3 _dispatch_main_queue_callback_4CF + 31
+10  CoreFoundation                      0x00007ff816cb4610 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 9
+11  CoreFoundation                      0x00007ff816c74b90 __CFRunLoopRun + 2454
+12  CoreFoundation                      0x00007ff816c73b80 CFRunLoopRunSpecific + 560
+13  HIToolbox                           0x00007ff8205b8766 RunCurrentEventLoopInMode + 292
+14  HIToolbox                           0x00007ff8205b8576 ReceiveNextEventCommon + 679
+15  HIToolbox                           0x00007ff8205b82b3 _BlockUntilNextEventMatchingListInModeWithFilter + 70
+16  AppKit                              0x00007ff819dbff33 _DPSNextEvent + 909
+17  AppKit                              0x00007ff819dbedb4 -[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 1219
+18  XUL                                 0x0000000120c77597 _ZN14nsXPTCStubBase7Stub249Ev + 12245431
+19  AppKit                              0x00007ff819db13f7 -[NSApplication run] + 586
+20  XUL                                 0x0000000120c78841 _ZN14nsXPTCStubBase7Stub249Ev + 12250209
+21  XUL                                 0x00000001248e2a0c workerlz4_decompress + 395388
+22  XUL                                 0x000000012111b175 workerlz4_maxCompressedSize + 470741
+23  XUL                                 0x0000000124951eec workerlz4_decompress + 851292
+24  XUL                                 0x0000000124952325 workerlz4_decompress + 852373
+25  firefox-bin                         0x000000010f86d005 firefox-bin + 8197
+26  dyld                                0x00007ff816867310 start + 2432
+1   HIToolbox                           0x00007ff8205b80c2 _ZN15MenuBarInstance22RemoveAutoShowObserverEv + 30
+2   HIToolbox                           0x00007ff82059ace3 _ZN15MenuBarInstance21UpdateAggregateUIModeE21MenuBarAnimationStylehhh + 1125
+3   HIToolbox                           0x00007ff82059a7a4 _ZN15MenuBarInstance16ForEachMenuBarDoEU13block_pointerFvPS_E + 46
+4   HIToolbox                           0x00007ff82059a762 SetSystemUIMode + 209
+5   AppKit                              0x00007ff81a0fc4c3 -[NSApplication _setPresentationOptions:instance:flags:] + 1157
+6   AppKit                              0x00007ff819f51185 -[NSApplication _updateFullScreenPresentationOptionsForInstance:] + 614
+7   CoreFoundation                      0x00007ff816c6b3f4 __CFNOTIFICATIONCENTER_IS_CALLING_OUT_TO_AN_OBSERVER__ + 137
+8   CoreFoundation                      0x00007ff816d0543a ___CFXRegistrationPost_block_invoke + 88
+9   CoreFoundation                      0x00007ff816d05389 _CFXRegistrationPost + 536
+10  CoreFoundation                      0x00007ff816c3e919 _CFXNotificationPost + 735
+11  Foundation                          0x00007ff817a78f2c -[NSNotificationCenter postNotificationName:object:userInfo:] + 82
+12  AppKit                              0x00007ff81a0fcb28 spacesNotificationHandler + 119
+13  SkyLight                            0x00007ff81b89a74d _ZN12_GLOBAL__N_123notify_datagram_handlerEj15CGSDatagramTypePvmS1_ + 1030
+14  SkyLight                            0x00007ff81bbad04a _ZN21CGSDatagramReadStream26dispatchMainQueueDatagramsEv + 202
+15  SkyLight                            0x00007ff81bbacf71 ___ZN21CGSDatagramReadStream15mainQueueWakeupEv_block_invoke + 18
+16  libdispatch.dylib                   0x00007ff816a197fb _dispatch_call_block_and_release + 12
+17  libdispatch.dylib                   0x00007ff816a1aa44 _dispatch_client_callout + 8
+18  libdispatch.dylib                   0x00007ff816a277b9 _dispatch_main_queue_drain + 952
+19  libdispatch.dylib                   0x00007ff816a273f3 _dispatch_main_queue_callback_4CF + 31
+20  CoreFoundation                      0x00007ff816cb4610 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 9
+21  CoreFoundation                      0x00007ff816c74b90 __CFRunLoopRun + 2454
+22  CoreFoundation                      0x00007ff816c73b80 CFRunLoopRunSpecific + 560
+23  HIToolbox                           0x00007ff8205b8766 RunCurrentEventLoopInMode + 292
+24  HIToolbox                           0x00007ff8205b8576 ReceiveNextEventCommon + 679
+25  HIToolbox                           0x00007ff8205b82b3 _BlockUntilNextEventMatchingListInModeWithFilter + 70
+26  AppKit                              0x00007ff819dbff33 _DPSNextEvent + 909
+27  AppKit                              0x00007ff819dbedb4 -[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 1219
+28  XUL                                 0x0000000120c77597 _ZN14nsXPTCStubBase7Stub249Ev + 12245431
+29  AppKit                              0x00007ff819db13f7 -[NSApplication run] + 586
+30  XUL                                 0x0000000120c78841 _ZN14nsXPTCStubBase7Stub249Ev + 12250209
+31  XUL                                 0x00000001248e2a0c workerlz4_decompress + 395388
+32  XUL                                 0x000000012111b175 workerlz4_maxCompressedSize + 470741
+33  XUL                                 0x0000000124951eec workerlz4_decompress + 851292
+34  XUL                                 0x0000000124952325 workerlz4_decompress + 852373
+35  firefox-bin                         0x000000010f86d005 firefox-bin + 8197
+36  dyld                                0x00007ff816867310 start + 2432
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1   HIToolbox                           0x00007ff82062b726 _ZN15MenuBarInstance22EnsureAutoShowObserverEv + 102
+2   HIToolbox                           0x00007ff8205f4638 _ZL17BroadcastInternaljPvh + 167
+3   SkyLight                            0x00007ff81b89a74d _ZN12_GLOBAL__N_123notify_datagram_handlerEj15CGSDatagramTypePvmS1_ + 1030
+4   SkyLight                            0x00007ff81bbad04a _ZN21CGSDatagramReadStream26dispatchMainQueueDatagramsEv + 202
+5   SkyLight                            0x00007ff81bbacf71 ___ZN21CGSDatagramReadStream15mainQueueWakeupEv_block_invoke + 18
+6   libdispatch.dylib                   0x00007ff816a197fb _dispatch_call_block_and_release + 12
+7   libdispatch.dylib                   0x00007ff816a1aa44 _dispatch_client_callout + 8
+8   libdispatch.dylib                   0x00007ff816a277b9 _dispatch_main_queue_drain + 952
+9   libdispatch.dylib                   0x00007ff816a273f3 _dispatch_main_queue_callback_4CF + 31
+10  CoreFoundation                      0x00007ff816cb4610 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 9
+11  CoreFoundation                      0x00007ff816c74b90 __CFRunLoopRun + 2454
+12  CoreFoundation                      0x00007ff816c73b80 CFRunLoopRunSpecific + 560
+13  HIToolbox                           0x00007ff8205b8766 RunCurrentEventLoopInMode + 292
+14  HIToolbox                           0x00007ff8205b8576 ReceiveNextEventCommon + 679
+15  HIToolbox                           0x00007ff8205b82b3 _BlockUntilNextEventMatchingListInModeWithFilter + 70
+16  AppKit                              0x00007ff819dbff33 _DPSNextEvent + 909
+17  AppKit                              0x00007ff819dbedb4 -[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 1219
+18  XUL                                 0x0000000120c77597 _ZN14nsXPTCStubBase7Stub249Ev + 12245431
+19  AppKit                              0x00007ff819db13f7 -[NSApplication run] + 586
+20  XUL                                 0x0000000120c78841 _ZN14nsXPTCStubBase7Stub249Ev + 12250209
+21  XUL                                 0x00000001248e2a0c workerlz4_decompress + 395388
+22  XUL                                 0x000000012111b175 workerlz4_maxCompressedSize + 470741
+23  XUL                                 0x0000000124951eec workerlz4_decompress + 851292
+24  XUL                                 0x0000000124952325 workerlz4_decompress + 852373
+25  firefox-bin                         0x000000010f86d005 firefox-bin + 8197
+26  dyld                                0x00007ff816867310 start + 2432
+1   HIToolbox                           0x00007ff8205b80c2 _ZN15MenuBarInstance22RemoveAutoShowObserverEv + 30
+2   HIToolbox                           0x00007ff82059ace3 _ZN15MenuBarInstance21UpdateAggregateUIModeE21MenuBarAnimationStylehhh + 1125
+3   HIToolbox                           0x00007ff82059a7a4 _ZN15MenuBarInstance16ForEachMenuBarDoEU13block_pointerFvPS_E + 46
+4   HIToolbox                           0x00007ff82059a762 SetSystemUIMode + 209
+5   AppKit                              0x00007ff81a0fc4c3 -[NSApplication _setPresentationOptions:instance:flags:] + 1157
+6   AppKit                              0x00007ff819f51185 -[NSApplication _updateFullScreenPresentationOptionsForInstance:] + 614
+7   CoreFoundation                      0x00007ff816c6b3f4 __CFNOTIFICATIONCENTER_IS_CALLING_OUT_TO_AN_OBSERVER__ + 137
+8   CoreFoundation                      0x00007ff816d0543a ___CFXRegistrationPost_block_invoke + 88
+9   CoreFoundation                      0x00007ff816d05389 _CFXRegistrationPost + 536
+10  CoreFoundation                      0x00007ff816c3e919 _CFXNotificationPost + 735
+11  Foundation                          0x00007ff817a78f2c -[NSNotificationCenter postNotificationName:object:userInfo:] + 82
+12  AppKit                              0x00007ff81a0fcb28 spacesNotificationHandler + 119
+13  SkyLight                            0x00007ff81b89a74d _ZN12_GLOBAL__N_123notify_datagram_handlerEj15CGSDatagramTypePvmS1_ + 1030
+14  SkyLight                            0x00007ff81bbad04a _ZN21CGSDatagramReadStream26dispatchMainQueueDatagramsEv + 202
+15  SkyLight                            0x00007ff81bbacf71 ___ZN21CGSDatagramReadStream15mainQueueWakeupEv_block_invoke + 18
+16  libdispatch.dylib                   0x00007ff816a197fb _dispatch_call_block_and_release + 12
+17  libdispatch.dylib                   0x00007ff816a1aa44 _dispatch_client_callout + 8
+18  libdispatch.dylib                   0x00007ff816a277b9 _dispatch_main_queue_drain + 952
+19  libdispatch.dylib                   0x00007ff816a273f3 _dispatch_main_queue_callback_4CF + 31
+20  CoreFoundation                      0x00007ff816cb4610 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 9
+21  CoreFoundation                      0x00007ff816c74b90 __CFRunLoopRun + 2454
+22  CoreFoundation                      0x00007ff816c73b80 CFRunLoopRunSpecific + 560
+23  HIToolbox                           0x00007ff8205b8766 RunCurrentEventLoopInMode + 292
+24  HIToolbox                           0x00007ff8205b8576 ReceiveNextEventCommon + 679
+25  HIToolbox                           0x00007ff8205b82b3 _BlockUntilNextEventMatchingListInModeWithFilter + 70
+26  AppKit                              0x00007ff819dbff33 _DPSNextEvent + 909
+27  AppKit                              0x00007ff819dbedb4 -[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 1219
+28  XUL                                 0x0000000120c77597 _ZN14nsXPTCStubBase7Stub249Ev + 12245431
+29  AppKit                              0x00007ff819db13f7 -[NSApplication run] + 586
+30  XUL                                 0x0000000120c78841 _ZN14nsXPTCStubBase7Stub249Ev + 12250209
+31  XUL                                 0x00000001248e2a0c workerlz4_decompress + 395388
+32  XUL                                 0x000000012111b175 workerlz4_maxCompressedSize + 470741
+33  XUL                                 0x0000000124951eec workerlz4_decompress + 851292
+34  XUL                                 0x0000000124952325 workerlz4_decompress + 852373
+35  firefox-bin                         0x000000010f86d005 firefox-bin + 8197
+36  dyld                                0x00007ff816867310 start + 2432
+1   HIToolbox                           0x00007ff82062b726 _ZN15MenuBarInstance22EnsureAutoShowObserverEv + 102
+2   HIToolbox                           0x00007ff8205f4638 _ZL17BroadcastInternaljPvh + 167
+3   SkyLight                            0x00007ff81b89a74d _ZN12_GLOBAL__N_123notify_datagram_handlerEj15CGSDatagramTypePvmS1_ + 1030
+4   SkyLight                            0x00007ff81bbad04a _ZN21CGSDatagramReadStream26dispatchMainQueueDatagramsEv + 202
+5   SkyLight                            0x00007ff81bbacf71 ___ZN21CGSDatagramReadStream15mainQueueWakeupEv_block_invoke + 18
+6   libdispatch.dylib                   0x00007ff816a197fb _dispatch_call_block_and_release + 12
+7   libdispatch.dylib                   0x00007ff816a1aa44 _dispatch_client_callout + 8
+8   libdispatch.dylib                   0x00007ff816a277b9 _dispatch_main_queue_drain + 952
+9   libdispatch.dylib                   0x00007ff816a273f3 _dispatch_main_queue_callback_4CF + 31
+10  CoreFoundation                      0x00007ff816cb4610 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 9
+11  CoreFoundation                      0x00007ff816c74b90 __CFRunLoopRun + 2454
+12  CoreFoundation                      0x00007ff816c73b80 CFRunLoopRunSpecific + 560
+13  HIToolbox                           0x00007ff8205b8766 RunCurrentEventLoopInMode + 292
+14  HIToolbox                           0x00007ff8205b8576 ReceiveNextEventCommon + 679
+15  HIToolbox                           0x00007ff8205b82b3 _BlockUntilNextEventMatchingListInModeWithFilter + 70
+16  AppKit                              0x00007ff819dbff33 _DPSNextEvent + 909
+17  AppKit                              0x00007ff819dbedb4 -[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 1219
+18  XUL                                 0x0000000120c77597 _ZN14nsXPTCStubBase7Stub249Ev + 12245431
+19  AppKit                              0x00007ff819db13f7 -[NSApplication run] + 586
+20  XUL                                 0x0000000120c78841 _ZN14nsXPTCStubBase7Stub249Ev + 12250209
+21  XUL                                 0x00000001248e2a0c workerlz4_decompress + 395388
+22  XUL                                 0x000000012111b175 workerlz4_maxCompressedSize + 470741
+23  XUL                                 0x0000000124951eec workerlz4_decompress + 851292
+24  XUL                                 0x0000000124952325 workerlz4_decompress + 852373
+25  firefox-bin                         0x000000010f86d005 firefox-bin + 8197
+26  dyld                                0x00007ff816867310 start + 2432
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: resource://devtools/client/framework/toolbox.js, line 2061: TypeError: currentPanel is undefined
+JavaScript error: resource://devtools/client/framework/toolbox.js, line 2061: TypeError: currentPanel is undefined
+JavaScript warning: resource://devtools/server/actors/utils/event-loop.js, line 83: debuggee 'https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_4.js?_=5227:1' would run
+1   HIToolbox                           0x00007ff8205b80c2 _ZN15MenuBarInstance22RemoveAutoShowObserverEv + 30
+2   HIToolbox                           0x00007ff82059ace3 _ZN15MenuBarInstance21UpdateAggregateUIModeE21MenuBarAnimationStylehhh + 1125
+3   HIToolbox                           0x00007ff82059a7a4 _ZN15MenuBarInstance16ForEachMenuBarDoEU13block_pointerFvPS_E + 46
+4   HIToolbox                           0x00007ff82059a762 SetSystemUIMode + 209
+5   AppKit                              0x00007ff81a0fc4c3 -[NSApplication _setPresentationOptions:instance:flags:] + 1157
+6   AppKit                              0x00007ff819f51185 -[NSApplication _updateFullScreenPresentationOptionsForInstance:] + 614
+7   CoreFoundation                      0x00007ff816c6b3f4 __CFNOTIFICATIONCENTER_IS_CALLING_OUT_TO_AN_OBSERVER__ + 137
+8   CoreFoundation                      0x00007ff816d0543a ___CFXRegistrationPost_block_invoke + 88
+9   CoreFoundation                      0x00007ff816d05389 _CFXRegistrationPost + 536
+10  CoreFoundation                      0x00007ff816c3e919 _CFXNotificationPost + 735
+11  Foundation                          0x00007ff817a78f2c -[NSNotificationCenter postNotificationName:object:userInfo:] + 82
+12  AppKit                              0x00007ff81a0fcb28 spacesNotificationHandler + 119
+13  SkyLight                            0x00007ff81b89a74d _ZN12_GLOBAL__N_123notify_datagram_handlerEj15CGSDatagramTypePvmS1_ + 1030
+14  SkyLight                            0x00007ff81bbad04a _ZN21CGSDatagramReadStream26dispatchMainQueueDatagramsEv + 202
+15  SkyLight                            0x00007ff81bbacf71 ___ZN21CGSDatagramReadStream15mainQueueWakeupEv_block_invoke + 18
+16  libdispatch.dylib                   0x00007ff816a197fb _dispatch_call_block_and_release + 12
+17  libdispatch.dylib                   0x00007ff816a1aa44 _dispatch_client_callout + 8
+18  libdispatch.dylib                   0x00007ff816a277b9 _dispatch_main_queue_drain + 952
+19  libdispatch.dylib                   0x00007ff816a273f3 _dispatch_main_queue_callback_4CF + 31
+20  CoreFoundation                      0x00007ff816cb4610 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 9
+21  CoreFoundation                      0x00007ff816c74b90 __CFRunLoopRun + 2454
+22  CoreFoundation                      0x00007ff816c73b80 CFRunLoopRunSpecific + 560
+23  HIToolbox                           0x00007ff8205b8766 RunCurrentEventLoopInMode + 292
+24  HIToolbox                           0x00007ff8205b8576 ReceiveNextEventCommon + 679
+25  HIToolbox                           0x00007ff8205b82b3 _BlockUntilNextEventMatchingListInModeWithFilter + 70
+26  AppKit                              0x00007ff819dbff33 _DPSNextEvent + 909
+27  AppKit                              0x00007ff819dbedb4 -[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 1219
+28  XUL                                 0x0000000120c77597 _ZN14nsXPTCStubBase7Stub249Ev + 12245431
+29  AppKit                              0x00007ff819db13f7 -[NSApplication run] + 586
+30  XUL                                 0x0000000120c78841 _ZN14nsXPTCStubBase7Stub249Ev + 12250209
+31  XUL                                 0x00000001248e2a0c workerlz4_decompress + 395388
+32  XUL                                 0x000000012111b175 workerlz4_maxCompressedSize + 470741
+33  XUL                                 0x0000000124951eec workerlz4_decompress + 851292
+34  XUL                                 0x0000000124952325 workerlz4_decompress + 852373
+35  firefox-bin                         0x000000010f86d005 firefox-bin + 8197
+36  dyld                                0x00007ff816867310 start + 2432
+1   HIToolbox                           0x00007ff82062b726 _ZN15MenuBarInstance22EnsureAutoShowObserverEv + 102
+2   HIToolbox                           0x00007ff8205f4638 _ZL17BroadcastInternaljPvh + 167
+3   SkyLight                            0x00007ff81b89a74d _ZN12_GLOBAL__N_123notify_datagram_handlerEj15CGSDatagramTypePvmS1_ + 1030
+4   SkyLight                            0x00007ff81bbad04a _ZN21CGSDatagramReadStream26dispatchMainQueueDatagramsEv + 202
+5   SkyLight                            0x00007ff81bbacf71 ___ZN21CGSDatagramReadStream15mainQueueWakeupEv_block_invoke + 18
+6   libdispatch.dylib                   0x00007ff816a197fb _dispatch_call_block_and_release + 12
+7   libdispatch.dylib                   0x00007ff816a1aa44 _dispatch_client_callout + 8
+8   libdispatch.dylib                   0x00007ff816a277b9 _dispatch_main_queue_drain + 952
+9   libdispatch.dylib                   0x00007ff816a273f3 _dispatch_main_queue_callback_4CF + 31
+10  CoreFoundation                      0x00007ff816cb4610 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 9
+11  CoreFoundation                      0x00007ff816c74b90 __CFRunLoopRun + 2454
+12  CoreFoundation                      0x00007ff816c73b80 CFRunLoopRunSpecific + 560
+13  HIToolbox                           0x00007ff8205b8766 RunCurrentEventLoopInMode + 292
+14  HIToolbox                           0x00007ff8205b8576 ReceiveNextEventCommon + 679
+15  HIToolbox                           0x00007ff8205b82b3 _BlockUntilNextEventMatchingListInModeWithFilter + 70
+16  AppKit                              0x00007ff819dbff33 _DPSNextEvent + 909
+17  AppKit                              0x00007ff819dbedb4 -[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 1219
+18  XUL                                 0x0000000120c77597 _ZN14nsXPTCStubBase7Stub249Ev + 12245431
+19  AppKit                              0x00007ff819db13f7 -[NSApplication run] + 586
+20  XUL                                 0x0000000120c78841 _ZN14nsXPTCStubBase7Stub249Ev + 12250209
+21  XUL                                 0x00000001248e2a0c workerlz4_decompress + 395388
+22  XUL                                 0x000000012111b175 workerlz4_maxCompressedSize + 470741
+23  XUL                                 0x0000000124951eec workerlz4_decompress + 851292
+24  XUL                                 0x0000000124952325 workerlz4_decompress + 852373
+25  firefox-bin                         0x000000010f86d005 firefox-bin + 8197
+26  dyld                                0x00007ff816867310 start + 2432
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_3.js?_=5227, line 1: WebGL context was lost.
+1   HIToolbox                           0x00007ff8205b80c2 _ZN15MenuBarInstance22RemoveAutoShowObserverEv + 30
+2   HIToolbox                           0x00007ff82059ace3 _ZN15MenuBarInstance21UpdateAggregateUIModeE21MenuBarAnimationStylehhh + 1125
+3   HIToolbox                           0x00007ff82059a7a4 _ZN15MenuBarInstance16ForEachMenuBarDoEU13block_pointerFvPS_E + 46
+4   HIToolbox                           0x00007ff82059a762 SetSystemUIMode + 209
+5   AppKit                              0x00007ff81a0fc4c3 -[NSApplication _setPresentationOptions:instance:flags:] + 1157
+6   AppKit                              0x00007ff819f51185 -[NSApplication _updateFullScreenPresentationOptionsForInstance:] + 614
+7   CoreFoundation                      0x00007ff816c6b3f4 __CFNOTIFICATIONCENTER_IS_CALLING_OUT_TO_AN_OBSERVER__ + 137
+8   CoreFoundation                      0x00007ff816d0543a ___CFXRegistrationPost_block_invoke + 88
+9   CoreFoundation                      0x00007ff816d05389 _CFXRegistrationPost + 536
+10  CoreFoundation                      0x00007ff816c3e919 _CFXNotificationPost + 735
+11  Foundation                          0x00007ff817a78f2c -[NSNotificationCenter postNotificationName:object:userInfo:] + 82
+12  AppKit                              0x00007ff81a0fcb28 spacesNotificationHandler + 119
+13  SkyLight                            0x00007ff81b89a74d _ZN12_GLOBAL__N_123notify_datagram_handlerEj15CGSDatagramTypePvmS1_ + 1030
+14  SkyLight                            0x00007ff81bbad04a _ZN21CGSDatagramReadStream26dispatchMainQueueDatagramsEv + 202
+15  SkyLight                            0x00007ff81bbacf71 ___ZN21CGSDatagramReadStream15mainQueueWakeupEv_block_invoke + 18
+16  libdispatch.dylib                   0x00007ff816a197fb _dispatch_call_block_and_release + 12
+17  libdispatch.dylib                   0x00007ff816a1aa44 _dispatch_client_callout + 8
+18  libdispatch.dylib                   0x00007ff816a277b9 _dispatch_main_queue_drain + 952
+19  libdispatch.dylib                   0x00007ff816a273f3 _dispatch_main_queue_callback_4CF + 31
+20  CoreFoundation                      0x00007ff816cb4610 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 9
+21  CoreFoundation                      0x00007ff816c74b90 __CFRunLoopRun + 2454
+22  CoreFoundation                      0x00007ff816c73b80 CFRunLoopRunSpecific + 560
+23  HIToolbox                           0x00007ff8205b8766 RunCurrentEventLoopInMode + 292
+24  HIToolbox                           0x00007ff8205b8576 ReceiveNextEventCommon + 679
+25  HIToolbox                           0x00007ff8205b82b3 _BlockUntilNextEventMatchingListInModeWithFilter + 70
+26  AppKit                              0x00007ff819dbff33 _DPSNextEvent + 909
+27  AppKit                              0x00007ff819dbedb4 -[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 1219
+28  XUL                                 0x0000000120c77597 _ZN14nsXPTCStubBase7Stub249Ev + 12245431
+29  AppKit                              0x00007ff819db13f7 -[NSApplication run] + 586
+30  XUL                                 0x0000000120c78841 _ZN14nsXPTCStubBase7Stub249Ev + 12250209
+31  XUL                                 0x00000001248e2a0c workerlz4_decompress + 395388
+32  XUL                                 0x000000012111b175 workerlz4_maxCompressedSize + 470741
+33  XUL                                 0x0000000124951eec workerlz4_decompress + 851292
+34  XUL                                 0x0000000124952325 workerlz4_decompress + 852373
+35  firefox-bin                         0x000000010f86d005 firefox-bin + 8197
+36  dyld                                0x00007ff816867310 start + 2432
+1   HIToolbox                           0x00007ff82062b726 _ZN15MenuBarInstance22EnsureAutoShowObserverEv + 102
+2   HIToolbox                           0x00007ff8205f4638 _ZL17BroadcastInternaljPvh + 167
+3   SkyLight                            0x00007ff81b89a74d _ZN12_GLOBAL__N_123notify_datagram_handlerEj15CGSDatagramTypePvmS1_ + 1030
+4   SkyLight                            0x00007ff81bbad04a _ZN21CGSDatagramReadStream26dispatchMainQueueDatagramsEv + 202
+5   SkyLight                            0x00007ff81bbacf71 ___ZN21CGSDatagramReadStream15mainQueueWakeupEv_block_invoke + 18
+6   libdispatch.dylib                   0x00007ff816a197fb _dispatch_call_block_and_release + 12
+7   libdispatch.dylib                   0x00007ff816a1aa44 _dispatch_client_callout + 8
+8   libdispatch.dylib                   0x00007ff816a277b9 _dispatch_main_queue_drain + 952
+9   libdispatch.dylib                   0x00007ff816a273f3 _dispatch_main_queue_callback_4CF + 31
+10  CoreFoundation                      0x00007ff816cb4610 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 9
+11  CoreFoundation                      0x00007ff816c74b90 __CFRunLoopRun + 2454
+12  CoreFoundation                      0x00007ff816c73b80 CFRunLoopRunSpecific + 560
+13  HIToolbox                           0x00007ff8205b8766 RunCurrentEventLoopInMode + 292
+14  HIToolbox                           0x00007ff8205b8576 ReceiveNextEventCommon + 679
+15  HIToolbox                           0x00007ff8205b82b3 _BlockUntilNextEventMatchingListInModeWithFilter + 70
+16  AppKit                              0x00007ff819dbff33 _DPSNextEvent + 909
+17  AppKit                              0x00007ff819dbedb4 -[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 1219
+18  XUL                                 0x0000000120c77597 _ZN14nsXPTCStubBase7Stub249Ev + 12245431
+19  AppKit                              0x00007ff819db13f7 -[NSApplication run] + 586
+20  XUL                                 0x0000000120c78841 _ZN14nsXPTCStubBase7Stub249Ev + 12250209
+21  XUL                                 0x00000001248e2a0c workerlz4_decompress + 395388
+22  XUL                                 0x000000012111b175 workerlz4_maxCompressedSize + 470741
+23  XUL                                 0x0000000124951eec workerlz4_decompress + 851292
+24  XUL                                 0x0000000124952325 workerlz4_decompress + 852373
+25  firefox-bin                         0x000000010f86d005 firefox-bin + 8197
+26  dyld                                0x00007ff816867310 start + 2432
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_3.js?_=5227, line 1: WebGL context was lost.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_3.js?_=5227, line 1: WebGL context was lost.
+1   HIToolbox                           0x00007ff8205b80c2 _ZN15MenuBarInstance22RemoveAutoShowObserverEv + 30
+2   HIToolbox                           0x00007ff82059ace3 _ZN15MenuBarInstance21UpdateAggregateUIModeE21MenuBarAnimationStylehhh + 1125
+3   HIToolbox                           0x00007ff82059a7a4 _ZN15MenuBarInstance16ForEachMenuBarDoEU13block_pointerFvPS_E + 46
+4   HIToolbox                           0x00007ff82059a762 SetSystemUIMode + 209
+5   AppKit                              0x00007ff81a0fc4c3 -[NSApplication _setPresentationOptions:instance:flags:] + 1157
+6   AppKit                              0x00007ff819f51185 -[NSApplication _updateFullScreenPresentationOptionsForInstance:] + 614
+7   CoreFoundation                      0x00007ff816c6b3f4 __CFNOTIFICATIONCENTER_IS_CALLING_OUT_TO_AN_OBSERVER__ + 137
+8   CoreFoundation                      0x00007ff816d0543a ___CFXRegistrationPost_block_invoke + 88
+9   CoreFoundation                      0x00007ff816d05389 _CFXRegistrationPost + 536
+10  CoreFoundation                      0x00007ff816c3e919 _CFXNotificationPost + 735
+11  Foundation                          0x00007ff817a78f2c -[NSNotificationCenter postNotificationName:object:userInfo:] + 82
+12  AppKit                              0x00007ff81a0fcb28 spacesNotificationHandler + 119
+13  SkyLight                            0x00007ff81b89a74d _ZN12_GLOBAL__N_123notify_datagram_handlerEj15CGSDatagramTypePvmS1_ + 1030
+14  SkyLight                            0x00007ff81bbad04a _ZN21CGSDatagramReadStream26dispatchMainQueueDatagramsEv + 202
+15  SkyLight                            0x00007ff81bbacf71 ___ZN21CGSDatagramReadStream15mainQueueWakeupEv_block_invoke + 18
+16  libdispatch.dylib                   0x00007ff816a197fb _dispatch_call_block_and_release + 12
+17  libdispatch.dylib                   0x00007ff816a1aa44 _dispatch_client_callout + 8
+18  libdispatch.dylib                   0x00007ff816a277b9 _dispatch_main_queue_drain + 952
+19  libdispatch.dylib                   0x00007ff816a273f3 _dispatch_main_queue_callback_4CF + 31
+20  CoreFoundation                      0x00007ff816cb4610 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 9
+21  CoreFoundation                      0x00007ff816c74b90 __CFRunLoopRun + 2454
+22  CoreFoundation                      0x00007ff816c73b80 CFRunLoopRunSpecific + 560
+23  HIToolbox                           0x00007ff8205b8766 RunCurrentEventLoopInMode + 292
+24  HIToolbox                           0x00007ff8205b8576 ReceiveNextEventCommon + 679
+25  HIToolbox                           0x00007ff8205b82b3 _BlockUntilNextEventMatchingListInModeWithFilter + 70
+26  AppKit                              0x00007ff819dbff33 _DPSNextEvent + 909
+27  AppKit                              0x00007ff819dbedb4 -[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 1219
+28  XUL                                 0x0000000120c77597 _ZN14nsXPTCStubBase7Stub249Ev + 12245431
+29  AppKit                              0x00007ff819db13f7 -[NSApplication run] + 586
+30  XUL                                 0x0000000120c78841 _ZN14nsXPTCStubBase7Stub249Ev + 12250209
+31  XUL                                 0x00000001248e2a0c workerlz4_decompress + 395388
+32  XUL                                 0x000000012111b175 workerlz4_maxCompressedSize + 470741
+33  XUL                                 0x0000000124951eec workerlz4_decompress + 851292
+34  XUL                                 0x0000000124952325 workerlz4_decompress + 852373
+35  firefox-bin                         0x000000010f86d005 firefox-bin + 8197
+36  dyld                                0x00007ff816867310 start + 2432
+1   HIToolbox                           0x00007ff82062b726 _ZN15MenuBarInstance22EnsureAutoShowObserverEv + 102
+2   HIToolbox                           0x00007ff8205f4638 _ZL17BroadcastInternaljPvh + 167
+3   SkyLight                            0x00007ff81b89a74d _ZN12_GLOBAL__N_123notify_datagram_handlerEj15CGSDatagramTypePvmS1_ + 1030
+4   SkyLight                            0x00007ff81bbad04a _ZN21CGSDatagramReadStream26dispatchMainQueueDatagramsEv + 202
+5   SkyLight                            0x00007ff81bbacf71 ___ZN21CGSDatagramReadStream15mainQueueWakeupEv_block_invoke + 18
+6   libdispatch.dylib                   0x00007ff816a197fb _dispatch_call_block_and_release + 12
+7   libdispatch.dylib                   0x00007ff816a1aa44 _dispatch_client_callout + 8
+8   libdispatch.dylib                   0x00007ff816a277b9 _dispatch_main_queue_drain + 952
+9   libdispatch.dylib                   0x00007ff816a273f3 _dispatch_main_queue_callback_4CF + 31
+10  CoreFoundation                      0x00007ff816cb4610 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 9
+11  CoreFoundation                      0x00007ff816c74b90 __CFRunLoopRun + 2454
+12  CoreFoundation                      0x00007ff816c73b80 CFRunLoopRunSpecific + 560
+13  HIToolbox                           0x00007ff8205b8766 RunCurrentEventLoopInMode + 292
+14  HIToolbox                           0x00007ff8205b8576 ReceiveNextEventCommon + 679
+15  HIToolbox                           0x00007ff8205b82b3 _BlockUntilNextEventMatchingListInModeWithFilter + 70
+16  AppKit                              0x00007ff819dbff33 _DPSNextEvent + 909
+17  AppKit                              0x00007ff819dbedb4 -[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 1219
+18  XUL                                 0x0000000120c77597 _ZN14nsXPTCStubBase7Stub249Ev + 12245431
+19  AppKit                              0x00007ff819db13f7 -[NSApplication run] + 586
+20  XUL                                 0x0000000120c78841 _ZN14nsXPTCStubBase7Stub249Ev + 12250209
+21  XUL                                 0x00000001248e2a0c workerlz4_decompress + 395388
+22  XUL                                 0x000000012111b175 workerlz4_maxCompressedSize + 470741
+23  XUL                                 0x0000000124951eec workerlz4_decompress + 851292
+24  XUL                                 0x0000000124952325 workerlz4_decompress + 852373
+25  firefox-bin                         0x000000010f86d005 firefox-bin + 8197
+26  dyld                                0x00007ff816867310 start + 2432
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1   HIToolbox                           0x00007ff8205b80c2 _ZN15MenuBarInstance22RemoveAutoShowObserverEv + 30
+2   HIToolbox                           0x00007ff82059ace3 _ZN15MenuBarInstance21UpdateAggregateUIModeE21MenuBarAnimationStylehhh + 1125
+3   HIToolbox                           0x00007ff82059a7a4 _ZN15MenuBarInstance16ForEachMenuBarDoEU13block_pointerFvPS_E + 46
+4   HIToolbox                           0x00007ff82059a762 SetSystemUIMode + 209
+5   AppKit                              0x00007ff81a0fc4c3 -[NSApplication _setPresentationOptions:instance:flags:] + 1157
+6   AppKit                              0x00007ff819f51185 -[NSApplication _updateFullScreenPresentationOptionsForInstance:] + 614
+7   CoreFoundation                      0x00007ff816c6b3f4 __CFNOTIFICATIONCENTER_IS_CALLING_OUT_TO_AN_OBSERVER__ + 137
+8   CoreFoundation                      0x00007ff816d0543a ___CFXRegistrationPost_block_invoke + 88
+9   CoreFoundation                      0x00007ff816d05389 _CFXRegistrationPost + 536
+10  CoreFoundation                      0x00007ff816c3e919 _CFXNotificationPost + 735
+11  Foundation                          0x00007ff817a78f2c -[NSNotificationCenter postNotificationName:object:userInfo:] + 82
+12  AppKit                              0x00007ff81a0fcb28 spacesNotificationHandler + 119
+13  SkyLight                            0x00007ff81b89a74d _ZN12_GLOBAL__N_123notify_datagram_handlerEj15CGSDatagramTypePvmS1_ + 1030
+14  SkyLight                            0x00007ff81bbad04a _ZN21CGSDatagramReadStream26dispatchMainQueueDatagramsEv + 202
+15  SkyLight                            0x00007ff81bbacf71 ___ZN21CGSDatagramReadStream15mainQueueWakeupEv_block_invoke + 18
+16  libdispatch.dylib                   0x00007ff816a197fb _dispatch_call_block_and_release + 12
+17  libdispatch.dylib                   0x00007ff816a1aa44 _dispatch_client_callout + 8
+18  libdispatch.dylib                   0x00007ff816a277b9 _dispatch_main_queue_drain + 952
+19  libdispatch.dylib                   0x00007ff816a273f3 _dispatch_main_queue_callback_4CF + 31
+20  CoreFoundation                      0x00007ff816cb4610 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 9
+21  CoreFoundation                      0x00007ff816c74b90 __CFRunLoopRun + 2454
+22  CoreFoundation                      0x00007ff816c73b80 CFRunLoopRunSpecific + 560
+23  HIToolbox                           0x00007ff8205b8766 RunCurrentEventLoopInMode + 292
+24  HIToolbox                           0x00007ff8205b8576 ReceiveNextEventCommon + 679
+25  HIToolbox                           0x00007ff8205b82b3 _BlockUntilNextEventMatchingListInModeWithFilter + 70
+26  AppKit                              0x00007ff819dbff33 _DPSNextEvent + 909
+27  AppKit                              0x00007ff819dbedb4 -[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 1219
+28  XUL                                 0x0000000120c77597 _ZN14nsXPTCStubBase7Stub249Ev + 12245431
+29  AppKit                              0x00007ff819db13f7 -[NSApplication run] + 586
+30  XUL                                 0x0000000120c78841 _ZN14nsXPTCStubBase7Stub249Ev + 12250209
+31  XUL                                 0x00000001248e2a0c workerlz4_decompress + 395388
+32  XUL                                 0x000000012111b175 workerlz4_maxCompressedSize + 470741
+33  XUL                                 0x0000000124951eec workerlz4_decompress + 851292
+34  XUL                                 0x0000000124952325 workerlz4_decompress + 852373
+35  firefox-bin                         0x000000010f86d005 firefox-bin + 8197
+36  dyld                                0x00007ff816867310 start + 2432
+1696110364439	geckodriver	INFO	Listening on 127.0.0.1:56742
+1696110364850	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofileq04okB"
+*** You are running in headless mode.
+1696110365378	Marionette	INFO	Marionette enabled
+1696110365440	Marionette	INFO	Listening on port 56750
+Read port: 56750
+WebDriver BiDi listening on ws://127.0.0.1:56743
+1696110365936	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofileq04okB/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56743/devtools/browser/95d02f5a-09e5-46cd-9a38-cffc91770bdf
+1696110374900	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:236:24
+TimedPromise@chrome://remote/content/marionette/sync.js:221:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+1696110377288	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+[GFX1-]: Unrecognized feature ACCELERATED_CANVAS2D
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1696110402425	geckodriver	INFO	Listening on 127.0.0.1:56830
+1696110402841	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofileAMdvru"
+1696110403902	Marionette	INFO	Marionette enabled
+1696110403934	Marionette	INFO	Listening on port 56838
+Read port: 56838
+WebDriver BiDi listening on ws://127.0.0.1:56831
+1696110404201	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofileAMdvru/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56831/devtools/browser/580c26d9-92fc-417f-a28c-144f3c67c0f1
+1696110413235	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:236:24
+TimedPromise@chrome://remote/content/marionette/sync.js:221:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+1696110415237	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_1.js?_=5227, line 1: TypeError: t is null
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_3.js?_=5227, line 1: WebGL context was lost.
+1696110428966	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:236:24
+TimedPromise@chrome://remote/content/marionette/sync.js:221:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_3.js?_=5227, line 1: WebGL context was lost.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_3.js?_=5227, line 1: WebGL context was lost.
+1696110431710	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:236:24
+TimedPromise@chrome://remote/content/marionette/sync.js:221:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+1696110441659	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:236:24
+TimedPromise@chrome://remote/content/marionette/sync.js:221:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+1696110448602	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:236:24
+TimedPromise@chrome://remote/content/marionette/sync.js:221:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript warning: resource://devtools/server/actors/utils/event-loop.js, line 83: debuggee 'https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_4.js?_=5227:1' would run
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://devtools/client/framework/toolbox.js, line 2061: TypeError: currentPanel is undefined
+JavaScript warning: resource://devtools/server/actors/utils/event-loop.js, line 83: debuggee 'https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_4.js?_=5227:1' would run
+1696110600251	geckodriver	INFO	Listening on 127.0.0.1:56924
+1696110600622	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofilecc5ZTF"
+1696110602002	Marionette	INFO	Marionette enabled
+1696110602044	Marionette	INFO	Listening on port 56932
+Read port: 56932
+WebDriver BiDi listening on ws://127.0.0.1:56925
+1696110602662	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofilecc5ZTF/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56925/devtools/browser/659a4eb2-e3a4-4d46-8c98-310438fd11d4
+1696110611869	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:236:24
+TimedPromise@chrome://remote/content/marionette/sync.js:221:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+1696110614115	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://devtools/client/framework/toolbox.js, line 2061: TypeError: currentPanel is undefined
+JavaScript error: resource://devtools/client/framework/toolbox.js, line 2061: TypeError: currentPanel is undefined
+JavaScript warning: resource://devtools/server/actors/utils/event-loop.js, line 83: debuggee 'https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_4.js?_=5227:1' would run
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.error: (new TypeError("topBrowsingContext is null", "resource://devtools/server/actors/watcher/browsing-context-helpers.jsm", 391))
+console.error: (new TypeError("topBrowsingContext is null", "resource://devtools/server/actors/watcher/browsing-context-helpers.jsm", 391))
+1696110731192	geckodriver	INFO	Listening on 127.0.0.1:57008
+1696110731519	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofilepzp5gj"
+1696110732266	Marionette	INFO	Marionette enabled
+1696110732380	Marionette	INFO	Listening on port 57017
+Read port: 57017
+WebDriver BiDi listening on ws://127.0.0.1:57009
+1696110732984	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofilepzp5gj/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:57009/devtools/browser/1549b5f3-ff17-40c7-993d-280a3bb1713e
+1696110741906	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:236:24
+TimedPromise@chrome://remote/content/marionette/sync.js:221:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+1696110744226	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+[GFX1-]: Unrecognized feature ACCELERATED_CANVAS2D
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript warning: resource://devtools/server/actors/utils/event-loop.js, line 83: debuggee 'https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_3.js?_=5227:1' would run
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1696110923035	geckodriver	INFO	Listening on 127.0.0.1:57100
+1696110923452	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofilenZ0iEX"
+1696110924503	Marionette	INFO	Marionette enabled
+1696110924548	Marionette	INFO	Listening on port 57108
+Read port: 57108
+WebDriver BiDi listening on ws://127.0.0.1:57101
+1696110925047	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofilenZ0iEX/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:57101/devtools/browser/1635693e-412d-471a-bc6b-ff658b3e69ce
+1696110933535	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:236:24
+TimedPromise@chrome://remote/content/marionette/sync.js:221:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+1696110935731	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_1.js?_=5227, line 1: TypeError: t is null
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_3.js?_=5227, line 1: WebGL context was lost.
+1696110949036	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:236:24
+TimedPromise@chrome://remote/content/marionette/sync.js:221:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_3.js?_=5227, line 1: WebGL context was lost.
+1696110949769	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:236:24
+TimedPromise@chrome://remote/content/marionette/sync.js:221:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://devtools/client/framework/toolbox.js, line 2061: TypeError: currentPanel is undefined
+JavaScript warning: resource://devtools/server/actors/utils/event-loop.js, line 83: debuggee 'https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_4.js?_=5227:1' would run
+[GFX1-]: Unrecognized feature ACCELERATED_CANVAS2D
+1696111055802	geckodriver	INFO	Listening on 127.0.0.1:57184
+1696111056202	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofileqIEaoT"
+1696111057600	Marionette	INFO	Marionette enabled
+1696111057631	Marionette	INFO	Listening on port 57192
+Read port: 57192
+WebDriver BiDi listening on ws://127.0.0.1:57185
+1696111058104	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofileqIEaoT/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:57185/devtools/browser/523df5c8-3b2a-4609-8d10-c09519529d68
+1696111061979	Marionette	INFO	Stopped listening on port 56638
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1696111063142	Marionette	INFO	Stopped listening on port 56838
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1696111064866	Marionette	INFO	Stopped listening on port 56932
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+!!! error running onStopped callback: TypeError: callback is not a function
+1696111066570	Marionette	INFO	Stopped listening on port 57017
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1696111068174	Marionette	INFO	Stopped listening on port 57108
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 576: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 576: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 576: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1696111068297	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:236:24
+TimedPromise@chrome://remote/content/marionette/sync.js:221:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+1696111070385	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_3.js?_=5227, line 1: WebGL context was lost.
+1696111096703	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:236:24
+TimedPromise@chrome://remote/content/marionette/sync.js:221:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+1696111107046	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:236:24
+TimedPromise@chrome://remote/content/marionette/sync.js:221:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://devtools/client/framework/toolbox.js, line 2061: TypeError: currentPanel is undefined
+JavaScript error: resource://devtools/client/framework/toolbox.js, line 2061: TypeError: currentPanel is undefined
+JavaScript warning: resource://devtools/server/actors/utils/event-loop.js, line 83: debuggee 'https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_4.js?_=5227:1' would run
+console.error: (new TypeError("topBrowsingContext is null", "resource://devtools/server/actors/watcher/browsing-context-helpers.jsm", 391))
+1696111227517	geckodriver	INFO	Listening on 127.0.0.1:57266
+1696111227923	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofile9dIgYS"
+1696111228521	Marionette	INFO	Marionette enabled
+1696111228558	Marionette	INFO	Listening on port 57274
+Read port: 57274
+WebDriver BiDi listening on ws://127.0.0.1:57267
+1696111229092	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofile9dIgYS/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:57267/devtools/browser/7cafd651-2ef3-4833-b813-fecfad25efb7
+1696111238467	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:236:24
+TimedPromise@chrome://remote/content/marionette/sync.js:221:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+1696111240585	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://devtools/client/framework/toolbox.js, line 2061: TypeError: currentPanel is undefined
+JavaScript error: resource://devtools/client/framework/toolbox.js, line 2061: TypeError: currentPanel is undefined
+JavaScript warning: resource://devtools/server/actors/utils/event-loop.js, line 83: debuggee 'https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/compiled_4.js?_=5227:1' would run
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1696111374029	geckodriver	INFO	Listening on 127.0.0.1:57351
+1696111374432	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofileTgADks"
+1696111375067	Marionette	INFO	Marionette enabled
+1696111375114	Marionette	INFO	Listening on port 57359
+Read port: 57359
+WebDriver BiDi listening on ws://127.0.0.1:57352
+1696111375915	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofileTgADks/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:57352/devtools/browser/189e546b-e2ae-478a-8ab7-b6f24421a9c6
+1696111384558	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:236:24
+TimedPromise@chrome://remote/content/marionette/sync.js:221:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+1696111386927	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+[GFX1-]: Unrecognized feature ACCELERATED_CANVAS2D
+console.error: (new TypeError("topBrowsingContext is null", "resource://devtools/server/actors/watcher/browsing-context-helpers.jsm", 391))
+1696111583078	Marionette	INFO	Stopped listening on port 57274
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+!!! error running onStopped callback: TypeError: callback is not a function
+1696111584097	Marionette	INFO	Stopped listening on port 57192
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+!!! error running onStopped callback: TypeError: callback is not a function
+1696111585260	Marionette	INFO	Stopped listening on port 57359
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+!!! error running onStopped callback: TypeError: callback is not a function
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
