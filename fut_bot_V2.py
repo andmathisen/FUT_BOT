@@ -31,9 +31,11 @@ def create_cookies():
     pickle.dump(driver.get_cookies(), open("cookies.pkl", "wb"))
 
 def load_cookie(driver, path):
+    print(driver.get_cookies())
     with open(path, 'rb') as cookiesfile:
         cookies = pickle.load(cookiesfile)
         for cookie in cookies:
+            print(cookie)
             driver.add_cookie(cookie)
 
 def attempt_click_xpath(xpath, driver):
@@ -106,8 +108,8 @@ if __name__ == "__main__":
 
     options = webdriver.ChromeOptions()
 
-    # options.add_argument("--headless=new")
-    options.add_argument("--disable-gpu")
+    options.add_argument("--headless=new")
+
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=options)
 
@@ -116,7 +118,13 @@ if __name__ == "__main__":
     # driver = webdriver.Firefox(options=options, executable_path=GeckoDriverManager().install())
     # driver = webdriver.Chrome(
     #     executable_path="/Users/andreas/desktop/FUT_BOT/chromedriver")
-    driver.get("https://www.ea.com/ea-sports-fc/ultimate-team/web-app/")
+    
+    driver.navigate().to("https://www.ea.com/ea-sports-fc/ultimate-team/web-app/")
+    # driver.get("https://www.ea.com/ea-sports-fc/ultimate-team/web-app/")
+    wait = WebDriverWait(driver, 10)
+    element = wait.until(EC.visibility_of_element_located((By.XPATH, '/html/body/main/div')))
+
+    driver.add_cookie({'name': 'EDGESCAPE_COUNTRY', 'value': 'NO', 'path': '/', 'domain': 'www.ea.com', 'secure': False, 'httpOnly': False, 'sameSite': 'None'})
 
     load_cookie(driver, "cookies.pkl")
 
@@ -143,8 +151,7 @@ if __name__ == "__main__":
 
         while True:
             pack_profit = 0
-            if check_exists_by_css("body > main > section > section > div.ut-navigation-bar-view.navbar-style-landscape.currency-purchase > button.ut-navigation-button-control",driver):
-                attempt_click_css("body > main > section > section > div.ut-navigation-bar-view.navbar-style-landscape.currency-purchase > button.ut-navigation-button-control",driver)
+            
             attempt_click_css("body > main > section > nav > button.ut-tab-bar-item.icon-store", driver)  # Store button
             attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > div.tile.ut-tile-view--with-gfx.col-1-2.packs-tile.storehub-tile", driver)  # Packs button
             
@@ -157,87 +164,8 @@ if __name__ == "__main__":
                 attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div.ut-store-hub-view--content > div:nth-child(2) > div.ut-store-pack-details-view--footer > button",driver) #Bronze Pack buy button   
                 attempt_click_css("body > div.view-modal-container.form-modal > section > div > div > button:nth-child(1)",driver) # OK
                 
-            if check_exists_by_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-unassigned-view.ui-layout-left > section:nth-child(2) > header > h2",driver):
-                ulElem = WebDriverWait(driver, 20).until(
-                                EC.element_to_be_clickable((By.CSS_SELECTOR, "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-unassigned-view.ui-layout-left > section:nth-child(2) > ul")))
-                all_li_elements = ulElem.find_elements(
-                    By.TAG_NAME, "li")
-
-                pack_items = [li for li in all_li_elements if len(li.get_attribute("class").replace(" ", "")) > 1]
-                
-                counter = 1
-                for _ in range(len(pack_items)):
-                    time.sleep(0.5)
-
-                    item = WebDriverWait(driver, 20).until(
-                            EC.visibility_of_element_located((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[1]/section[2]/ul/li["+str(
-                                counter) + "]")))
-                    
-                    try:
-                        item.click()
-                    except (StaleElementReferenceException,ElementClickInterceptedException):
-                        counter = counter - 1
-                        
-                # driver.find_element(By.XPATH,"/html/body/main/section/section/div[2]/div/div/section[1]/section/ul/li["+str(i+1-c)+"]").click()
-                    item_type = WebDriverWait(driver, 20).until(
-                                EC.visibility_of_element_located((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[1]/section[2]/ul/li["+str(max(counter,1))+"]/div/div[1]/div[1]"))).get_attribute("class")
-
-                    if "player" in item_type or "manager" in item_type:
-                        lowest_price = 100000
-                        attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(9)",driver)
-                        ulElem_tl = WebDriverWait(driver, 20).until(
-                                    EC.element_to_be_clickable((By.CSS_SELECTOR, "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-container-view--content > section > div.paginated-item-list.ut-pinned-list > ul")))
-                        all_li_elements_tl = ulElem_tl.find_elements(
-                            By.TAG_NAME, "li")
-                        
-                        for transferlist_item in all_li_elements_tl:
-                            if len(transferlist_item.text.split("\n")) > 1:
-                                price = int(transferlist_item.text.split("\n")[-3] if "," not in transferlist_item.text.split("\n")[-3] else transferlist_item.text.split("\n")[-3].replace(",",""))
-                                if price < lowest_price:
-                                    lowest_price = price
-                                    if lowest_price == 200:
-                                        break
-                            
-                            # if lowest_price < 250:
-                            #     attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-bar-view.navbar-style-secondary > button",driver)
-                            #     time.sleep(0.2)
-                            #     send_to_club = WebDriverWait(driver, 10).until(
-                            #                 EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[2]/div[2]/div/div[2]/div[3]/button[6]")))
-                                
-                            #     send_to_club_tag = send_to_club.text
-
-                            #     if send_to_club_tag == "Bytt dublett fra klubb":
-                            #         attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10)""body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10)",driver)
-                            #         attempt_click_css("body > div.view-modal-container.form-modal > section > div > div > button:nth-child(1)",driver)
-                            #         counter = counter - 1
-
-
-                            #     else:
-                            #         attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-container-view--content > div > div.DetailPanel > div.ut-button-group > button:nth-child(6)",driver)
-                            #         counter = counter - 1
-
-                            # else:
-                            attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-bar-view.navbar-style-secondary > button",driver)
-                            attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-container-view--content > div > div.DetailPanel > div.ut-quick-list-panel-view > div.ut-button-group > button",driver)
-                            price_input = attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-container-view--content > div > div.DetailPanel > div.ut-quick-list-panel-view > div.panelActions.open > div:nth-child(3) > div.ut-numeric-input-spinner-control > input",driver)
-                            time.sleep(0.4)
-                            price_input.send_keys(Keys.BACK_SPACE)
-                            time.sleep(0.4)
-                            price_input.send_keys(str(lowest_price-100))
-                            pack_profit = pack_profit + lowest_price-100
-                            attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-container-view--content > div > div.DetailPanel > div.ut-quick-list-panel-view > div.panelActions.open > button",driver)
-                            counter = counter - 1
-                                
-                    elif item_type == "small misc item common" or item_type == "small misc item rare":
-                        attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-container-view--content > div > div.DetailPanel > div.ut-button-group > button:nth-child(2)",driver)
-                        pack_profit = pack_profit + 100
-                        counter = counter - 1
-
-                attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-unassigned-view.ui-layout-left > section > div > button",driver)
-                attempt_click_css("body > div.view-modal-container.form-modal > section > div > div > button:nth-child(1)",driver)
             
-                if check_exists_by_css("body > main > section > section > div.ut-navigation-bar-view.navbar-style-landscape.currency-purchase > button.ut-navigation-button-control",driver):
-                    attempt_click_css("body > main > section > section > div.ut-navigation-bar-view.navbar-style-landscape.currency-purchase > button.ut-navigation-button-control",driver)  
+               
             ulElem = WebDriverWait(driver, 20).until(
                                 EC.element_to_be_clickable((By.CSS_SELECTOR, "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-unassigned-view.ui-layout-left > section > ul")))
             all_li_elements = ulElem.find_elements(
@@ -320,20 +248,103 @@ if __name__ == "__main__":
 
 
                 counter = counter + 1
-
-            if not check_exists_by_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-unassigned-view.ui-layout-left > section > div > button",driver):
-                attempt_click_css("body > main > section > section > div.ut-navigation-bar-view.navbar-style-landscape.currency-purchase > button.ut-navigation-button-control",driver)
-                if check_exists_by_css("body > main > section > section > div.ut-navigation-container-view--content > div > div.ut-store-hub-view--content > div.ut-unassigned-tile-view.tile",driver):
-                    attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div.ut-store-hub-view--content > div.ut-unassigned-tile-view.tile",driver)
-                else:
-                    classic = attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div.ea-filter-bar-view > div > button:nth-child(2)",driver) # Classic Packs
-                    if classic.text != "Classic Packs":
-                        attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div.ea-filter-bar-view > div > button:nth-child(3)",driver)
-                    attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div.ut-store-hub-view--content > div:nth-child(2) > div.ut-store-pack-details-view--footer > button",driver) #Bronze Pack buy button   
-                    attempt_click_css("body > div.view-modal-container.form-modal > section > div > div > button:nth-child(1)",driver) # OK
-              
-            else:
+            if check_exists_by_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-unassigned-view.ui-layout-left > section > div > button",driver):
                 attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-unassigned-view.ui-layout-left > section > div > button",driver)
                 attempt_click_css("body > div.view-modal-container.form-modal > section > div > div > button:nth-child(1)",driver)
+            time.sleep(0.2)
+            if check_exists_by_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-unassigned-view.ui-layout-left > section:nth-child(2) > header > h2",driver):
+                ulElem = WebDriverWait(driver, 20).until(
+                                EC.element_to_be_clickable((By.CSS_SELECTOR, "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-unassigned-view.ui-layout-left > section:nth-child(2) > ul")))
+                all_li_elements = ulElem.find_elements(
+                    By.TAG_NAME, "li")
+
+                pack_items = [li for li in all_li_elements if len(li.get_attribute("class").replace(" ", "")) > 1]
+                
+                counter = 1
+                for _ in range(len(pack_items)):
+                    time.sleep(0.5)
+
+                    item = WebDriverWait(driver, 20).until(
+                            EC.visibility_of_element_located((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[1]/section[2]/ul/li["+str(
+                                counter) + "]")))
+                    
+                    try:
+                        item.click()
+                    except (StaleElementReferenceException,ElementClickInterceptedException):
+                        counter = counter - 1
+                        
+                # driver.find_element(By.XPATH,"/html/body/main/section/section/div[2]/div/div/section[1]/section/ul/li["+str(i+1-c)+"]").click()
+                    item_type = WebDriverWait(driver, 20).until(
+                                EC.visibility_of_element_located((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[1]/section[2]/ul/li["+str(max(counter,1))+"]/div/div[1]/div[1]"))).get_attribute("class")
+
+                    if "player" in item_type or "manager" in item_type:
+                        lowest_price = 100000
+                        attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-container-view--content > div > div.DetailPanel > div.ut-button-group > button:nth-child(9)",driver)
+                        ulElem_tl = WebDriverWait(driver, 20).until(
+                                    EC.element_to_be_clickable((By.CSS_SELECTOR, "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-container-view--content > section > div.paginated-item-list.ut-pinned-list > ul")))
+                        all_li_elements_tl = ulElem_tl.find_elements(
+                            By.TAG_NAME, "li")
+                        
+                        for transferlist_item in all_li_elements_tl:
+                            
+                            if len(transferlist_item.text.split("\n")) > 1:
+                                price = int(transferlist_item.text.split("\n")[-3] if "," not in transferlist_item.text.split("\n")[-3] else transferlist_item.text.split("\n")[-3].replace(",",""))
+                                if price < lowest_price:
+                                    lowest_price = price
+                                    if lowest_price == 200:
+                                        break
+                            
+                            # if lowest_price < 250:
+                            #     attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-bar-view.navbar-style-secondary > button",driver)
+                            #     time.sleep(0.2)
+                            #     send_to_club = WebDriverWait(driver, 10).until(
+                            #                 EC.element_to_be_clickable((By.XPATH, "/html/body/main/section/section/div[2]/div/div/section[2]/div[2]/div/div[2]/div[3]/button[6]")))
+                                
+                            #     send_to_club_tag = send_to_club.text
+
+                            #     if send_to_club_tag == "Bytt dublett fra klubb":
+                            #         attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10)""body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(10)",driver)
+                            #         attempt_click_css("body > div.view-modal-container.form-modal > section > div > div > button:nth-child(1)",driver)
+                            #         counter = counter - 1
+
+
+                            #     else:
+                            #         attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-container-view--content > div > div.DetailPanel > div.ut-button-group > button:nth-child(6)",driver)
+                            #         counter = counter - 1
+
+                            # else:
+                        attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-bar-view.navbar-style-secondary > button",driver)
+                        attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-container-view--content > div > div.DetailPanel > div.ut-quick-list-panel-view > div.ut-button-group > button",driver)
+                        price_input = attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-container-view--content > div > div.DetailPanel > div.ut-quick-list-panel-view > div.panelActions.open > div:nth-child(3) > div.ut-numeric-input-spinner-control > input",driver)
+                        time.sleep(0.4)
+                        price_input.send_keys(Keys.BACK_SPACE)
+                        time.sleep(0.4)
+                        price_input.send_keys(str(lowest_price-100))
+                        pack_profit = pack_profit + lowest_price-100
+                        attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-container-view--content > div > div.DetailPanel > div.ut-quick-list-panel-view > div.panelActions.open > button",driver)
+                        counter = counter - 1
+                                
+                    elif item_type == "small misc item common" or item_type == "small misc item rare":
+                        attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div.ut-navigation-container-view--content > div > div.DetailPanel > div.ut-button-group > button:nth-child(2)",driver)
+                        pack_profit = pack_profit + 100
+                        counter = counter - 1
+
+                attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-unassigned-view.ui-layout-left > section > div > button",driver)
+                attempt_click_css("body > div.view-modal-container.form-modal > section > div > div > button:nth-child(1)",driver)
+            
+                if not check_exists_by_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-unassigned-view.ui-layout-left > section > div > button",driver):
+                    attempt_click_css("body > main > section > section > div.ut-navigation-bar-view.navbar-style-landscape.currency-purchase > button.ut-navigation-button-control",driver)
+                    if check_exists_by_css("body > main > section > section > div.ut-navigation-container-view--content > div > div.ut-store-hub-view--content > div.ut-unassigned-tile-view.tile",driver):
+                        attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div.ut-store-hub-view--content > div.ut-unassigned-tile-view.tile",driver)
+                    else:
+                        classic = attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div.ea-filter-bar-view > div > button:nth-child(2)",driver) # Classic Packs
+                        if classic.text != "Classic Packs":
+                            attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div.ea-filter-bar-view > div > button:nth-child(3)",driver)
+                        attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div.ut-store-hub-view--content > div:nth-child(2) > div.ut-store-pack-details-view--footer > button",driver) #Bronze Pack buy button   
+                        attempt_click_css("body > div.view-modal-container.form-modal > section > div > div > button:nth-child(1)",driver) # OK
+                
+                else:
+                    attempt_click_css("body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-unassigned-view.ui-layout-left > section > div > button",driver)
+                    attempt_click_css("body > div.view-modal-container.form-modal > section > div > div > button:nth-child(1)",driver)
             tot_profit = tot_profit + pack_profit+100-750
             print(tot_profit)

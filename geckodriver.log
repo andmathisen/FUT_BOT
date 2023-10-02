@@ -819,3 +819,19 @@ JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/oco
 JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1696265776371	geckodriver	INFO	Listening on 127.0.0.1:58560
+1696265776890	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofileQySBLU"
+1696265778977	Marionette	INFO	Marionette enabled
+1696265779026	Marionette	INFO	Listening on port 58571
+Read port: 58571
+WebDriver BiDi listening on ws://127.0.0.1:58561
+1696265779408	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dn/5qxw27mn18jd_h9v269qcbcr0000gn/T/rust_mozprofileQySBLU/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:58561/devtools/browser/e82f2a9b-bdec-49cf-8dc5-9a3ba19f57bd
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://signin.ea.com."
+1696265827095	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://www.ea.com/ea-sports-fc/ultimate-team/web-app/js/ocompiled.js?_=5227, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+[GFX1-]: Unrecognized feature ACCELERATED_CANVAS2D
+1696267121478	Marionette	INFO	Stopped listening on port 58571
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
